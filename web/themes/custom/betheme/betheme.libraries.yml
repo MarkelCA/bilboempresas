@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/betheme.style.css: {}
+  js:
+    assets/js/betheme.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

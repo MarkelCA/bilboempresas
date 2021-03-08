@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Contains ckeditor_bidi.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function ckeditor_bidi_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ckeditor_bidi':
+      $output = '';
+      $output .= '<h3>' . t('About CKEditor BiDi Buttons module') . '</h3>';
+      $output .= '<p>' . t('This module integrates the <a href=":cke_bidi_url">CKEditor BiDi(text direction) plugin</a> and make it available for CKEditor in Drupal 8.  The BiDi(text direction) plugin provides 2 bi directional text flow buttons,  RTL and LTR .',
+          [
+            ':cke_bidi_url' => 'http://ckeditor.com/addon/bidi',
+          ]) . '</p>';
+
+      $output .= '<h3>' . t('Configure/Activate') . '</h3>';
+      $output .= '<p>' . t('Go to <a href=":formats">Text formats and editors</a> and click the "Configure" button of a text format that already have "CKEditor" selected as "Text Editor".',
+            [
+              ':formats' => Url::fromRoute('filter.admin_overview')->toString(),
+            ]) . '</p>';
+
+      $output .= '<p>' . t('Now, while on configuration page of chosen text format, look at the "Toolbar configuration" field/section, and you should be able to see 2 BiDi buttons ready to be dragged into CKEditor toolbar.') . '</p>';
+
+      return $output;
+  }
+}

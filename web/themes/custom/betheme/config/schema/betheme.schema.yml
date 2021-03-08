@@ -1,0 +1,5 @@
+# Schema for the configuration files of the BEtheme theme.
+
+betheme.settings:
+  type: theme_settings
+  label: 'BEtheme settings'

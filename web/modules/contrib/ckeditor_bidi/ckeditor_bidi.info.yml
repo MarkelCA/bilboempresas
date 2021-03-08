@@ -1,0 +1,14 @@
+name: 'CKEditor BiDi Buttons'
+type: module
+description: 'Enables CKEditor 2 bi directional Buttons. One for Right To Left text direction (RTL) and another for Left To Right (LTR).'
+core_version_requirement: '^8 || ^9'
+core: '8.x'
+dependencies:
+  - drupal:ckeditor
+
+package: CKEditor
+
+# Information added by Drupal.org packaging script on 2020-06-20
+version: '3.1.0'
+project: 'ckeditor_bidi'
+datestamp: 1592656692
