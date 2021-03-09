@@ -25,6 +25,7 @@
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/module_filter": "^3.2",
+        "drupal/page_manager": "^4.0@beta",
         "drupal/radix": "^4.10",
         "drush/drush": "^10.4"
     },
