@@ -6750,23 +6750,6 @@
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
             "time": "2015-12-17T08:42:14+00:00"
-        },
-        {
-            "name": "wkse/ctools",
-            "version": "8.3.1",
-            "source": {
-                "type": "git",
-                "url": "http://gitlab.wklive.net/mikke-schiren/ctools.git",
-                "reference": "7112f6c060ec359cc6486f3b3ee5b137488ab3da"
-            },
-            "type": "drupal-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Misc tools",
-            "homepage": "http://drupal.org/project/ctools",
-            "time": "2016-01-21T10:09:13+00:00"
         }
     ],
     "packages-dev": [],
