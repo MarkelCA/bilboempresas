@@ -22,6 +22,7 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^4.1",
+        "drupal/entity": "^1.2",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/module_filter": "^3.2",
