@@ -22,7 +22,6 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^4.1",
-        "drupal/entity": "^1.2",
         "drupal/gin": "^3.0@alpha",
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/module_filter": "^3.2",
@@ -39,6 +38,12 @@
         "sort-packages": true
     },
     "extra": {
+    "enable-patching": true,
+    "patches": {
+        "drupal/page_manager" : {
+            "Page Manager's DuplicateUUIDException." : "https://www.drupal.org/files/issues/page_manager-clone_variant-2687919-2-8.0.3.patch"
+        }
+    },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
