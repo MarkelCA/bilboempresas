@@ -45,6 +45,9 @@
     "patches": {
         "drupal/radix" : {
             "multilingual not working" : "https://www.drupal.org/files/issues/2020-01-05/3060563-7.patch"
+        },
+        "drupal/language": {
+            "Unable to import translations file:": "https://www.drupal.org/files/issues/l10n_update-unable-to-download-translations-updates-216758-29.patch"
         }
     },
         "drupal-scaffold": {
