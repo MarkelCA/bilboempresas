@@ -16,7 +16,9 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/ckeditor_bidi": "^3.1",
         "drupal/components": "^2.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
@@ -41,8 +43,8 @@
     "extra": {
     "enable-patching": true,
     "patches": {
-        "drupal/page_manager" : {
-            "Page Manager's DuplicateUUIDException." : "https://www.drupal.org/files/issues/page_manager-clone_variant-2687919-2-8.0.3.patch"
+        "drupal/radix" : {
+            "multilingual not working" : "https://www.drupal.org/files/issues/2020-01-05/3060563-7.patch"
         }
     },
         "drupal-scaffold": {
