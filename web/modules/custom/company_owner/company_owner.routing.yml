@@ -1,0 +1,7 @@
+company_owner.editar:
+  path: '/owner_editar' #/node/{node}/editar
+
+  defaults: 
+    _controller: '\Drupal\company_owner\Controller\ModuleController::editar'
+  jequirements:
+    _acmess: 'TRUE'
