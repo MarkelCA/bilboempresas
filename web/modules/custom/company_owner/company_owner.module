@@ -1,1 +1,31 @@
 <?php
+
+function edit_company_menu() {
+    $items['/node/%/edit'] = array(
+        'callback' => 'editing_company',
+        'page_arguments' => array(
+            '1'
+        )
+    );
+
+    return $items;
+}
+
+function editing_company( $user_id ) { # in this test the user id takes the value of 5
+
+    return $user_id;
+
+}
+
+function company_owner_theme() {
+    return array(
+        'page1_theme' => array(
+          'variables' => array(
+              'data' => array(
+                  'data1' => 'default'
+              )
+          ),
+          'template' => 'newtemplate'
+     )
+     );
+}
