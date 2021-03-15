@@ -1,21 +1,6 @@
 <?php
-
-function edit_company_menu() {
-    $items['/node/%/edit'] = array(
-        'callback' => 'editing_company',
-        'page_arguments' => array(
-            '1'
-        )
-    );
-
-    return $items;
-}
-
-function editing_company( $user_id ) { # in this test the user id takes the value of 5
-
-    return $user_id;
-
-}
+use \Drupal\Core\Access\AccessResult;
+use \Drupal\node\NodeInterface;
 
 function company_owner_theme() {
     return array(
@@ -28,4 +13,16 @@ function company_owner_theme() {
           'template' => 'newtemplate'
      )
      );
+}
+function company_owner_node_access(NodeInterface $node, $op) {
+    $user_id = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $user_company_id = $user_id->field_propietario_empresa->getValue()[0]['target_id'];
+    $company_id = $node->get('nid')->value;
+
+    if($op === 'update') {
+            echo 'CONTENT';
+            return AccessResult::allowedIf( $company_id === $user_company_id );
+    }
+    
+      return AccessResult::neutral();
 }

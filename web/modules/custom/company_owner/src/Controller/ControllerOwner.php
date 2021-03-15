@@ -2,7 +2,7 @@
 namespace Drupal\company_owner\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-//use Drupal\node\Entity\NodeType;
+use Drupal\node\Entity\NodeType;
 use Drupal\node\Entity\Node as Node;
 use Drupal\user\Entity\User;
 class ControllerOwner extends ControllerBase {
@@ -17,19 +17,7 @@ class ControllerOwner extends ControllerBase {
         $userName = $data['username'];
         $companyId = $data['companyId'];
 
-        return array(
-            '#theme' => 'page1_theme',
-            '#data' => [
-                'title' => 'Welcome to pro3!',
-                'cover_description' => 'Elit dignissimos minus ipsa minima iure voluptatem, enim Pariatur maxime animi qui placeat optio Reprehenderit consequatur iste officiis a sint? Animi quia obcaecati nobis quaerat sit Odio architecto expedita et?',
-                'username' => $userName,
-                'company' => $userCompany,
-                'companyEditUrl' => "/node/$companyId/edit/", 
-                //'data1' => 'algo que no es default'
-                
-            ] 
-        ); 
-
+        return new \Symfony\Component\HttpFoundation\RedirectResponse("/node/$companyId");
     }
 
    public function getUserInfo() {
