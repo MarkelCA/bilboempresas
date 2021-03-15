@@ -4,7 +4,7 @@ use \Drupal\node\NodeInterface;
 
 function company_owner_theme() {
     return array(
-        'page1_theme' => array(
+        'owner_editing_theme' => array(
           'variables' => array(
               'data' => array(
                   'data1' => 'default'
