@@ -1,5 +1,5 @@
 company_owner.editar:
-  path: '/mi_empresa' #/node/{node}/editar
+  path: '/mi-empresa' #/node/{node}/editar
   defaults: 
     _controller: '\Drupal\company_owner\Controller\ControllerOwner::edit'
   requirements:

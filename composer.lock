@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23267a4ee889542cb76264d4d9f6575c",
+    "content-hash": "4e76be71d5cab0bf6820a34ece07a28e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2794,6 +2794,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/module_filter",
                 "issues": "https://www.drupal.org/project/issues/module_filter"
+            }
+        },
+        {
+            "name": "drupal/nodeaccess",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nodeaccess.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nodeaccess-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "ffa629e9ad5685372ee139c9c33a743e4f4807b1"
+            },
+            "require": {
+                "drupal/core": "^8"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1589973321",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ElusiveMind",
+                    "homepage": "https://www.drupal.org/user/350597"
+                },
+                {
+                    "name": "LeDucDuBleuet",
+                    "homepage": "https://www.drupal.org/user/103166"
+                },
+                {
+                    "name": "alisonjo315",
+                    "homepage": "https://www.drupal.org/user/453248"
+                }
+            ],
+            "description": "Provides per node access control.",
+            "homepage": "https://www.drupal.org/project/nodeaccess",
+            "support": {
+                "source": "https://git.drupalcode.org/project/nodeaccess"
             }
         },
         {

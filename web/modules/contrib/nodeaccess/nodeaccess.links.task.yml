@@ -1,0 +1,4 @@
+entity.node.grantform:
+  route_name: entity.node.grants
+  base_route: entity.node.canonical
+  title: 'Grants'
