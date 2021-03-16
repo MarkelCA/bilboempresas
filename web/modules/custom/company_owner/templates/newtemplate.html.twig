@@ -1,11 +1,22 @@
 <div id="cover-content" class='block'>
-    <div id="cover-description">
-        <h1 id='main-cover-title' class='block'>{{ data.title }}</h1>
-        <h2> {{ data.company }} </h2>
-        <a href='/node/{{ data.id }}/edit' class='btn btn-primary'>Editar</a>
+    <div id="cover-description" class='border border-primary p-4'>
+        <h1 id='main-cover-title' class='block text-center text-uppercase font-weight-bold text-primary mb-2'>{{ data.title }}</h1>
+        <a href='/node/{{ data.nid }}/edit' class='btn btn-primary d-block font-weight-bold mb-3'>Editar</a>
 
-          {% block content %}
-                {{ dump(content) }}
-          {% endblock %}
+        <p>{{ data.field_descripcion_de_la_empresa}}</p>
+        <p>{{ data.created}}</p>
+        <p>{{ data.field_codigo_cnae}}</p>
+        <p>{{ data.field_productos}}</p>
+        <p>{{ data.field_servicios}}</p>
+        <p>{{ data.field_telefono_de_contacto}}</p>
+
+
+        <pre>
+        <hr>
+        <h4>Content:</h4>{{ dump(content|keys) }}
+        <h4>Context keys:</h4>{{ dump(_context|keys) }}
+        {#<h4>Module data:</h4>{{dump(data|keys)}}#}
+        </pre>
+
     </div>
 </div>

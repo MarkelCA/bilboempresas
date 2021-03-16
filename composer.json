@@ -32,6 +32,7 @@
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/kint": "^2.1",
         "drupal/module_filter": "^3.2",
+        "drupal/nodeaccess": "^1.0",
         "drupal/page_manager": "^4.0@beta",
         "drupal/radix": "^4.10",
         "drupal/simple_gmap": "^3.0",
@@ -54,6 +55,9 @@
         },
         "drupal/language": {
             "Unable to import translations file:": "https://www.drupal.org/files/issues/l10n_update-unable-to-download-translations-updates-216758-29.patch"
+        },
+        "drupal/menu_item_role_access" : {
+            "The Override children field needs to be updated": "https://www.drupal.org/files/issues/2020-01-09/3083979-3.patch"
         }
     },
         "drupal-scaffold": {

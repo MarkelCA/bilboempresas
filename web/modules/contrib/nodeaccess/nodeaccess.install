@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @file
+ * Install/uninstall functions for Nodeaccess.
+ */
+
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_install().
+ */
+function nodeaccess_install() {
+  // Set up default permissions to be view for authenticated and
+  // anonymous users, and all permissions for author.
+  $grants = [];
+  $role_perms = user_role_permissions(['anonymous', 'authenticated']);
+  $grants['anonymous']['grant_view'] = (int) in_array('access content', $role_perms['anonymous']);
+  $grants['authenticated']['grant_view'] = (int) in_array('access content', $role_perms['authenticated']);
+  $role_alias = [];
+  $settings = \Drupal::configFactory()->getEditable('nodeaccess.settings');
+
+  foreach (NodeType::loadMultiple() as $type => $bundle) {
+    // We check the edit permissions for anonymous and authenticated users.
+    $edit_perm = 'edit any ' . $type . ' content';
+    $grants['anonymous']['grant_update'] = (int) in_array($edit_perm, $role_perms['anonymous']);
+    $grants['authenticated']['grant_update'] = (int) in_array($edit_perm, $role_perms['authenticated']);
+    // We check the delete permissions for anonymous and authenticated users.
+    $delete_perm = 'delete any ' . $type . ' content';
+    $grants['anonymous']['grant_delete'] = (int) in_array($delete_perm, $role_perms['anonymous']);
+    $grants['authenticated']['grant_delete'] = (int) in_array($delete_perm, $role_perms['authenticated']);
+    // Author Permissions.
+    $grants['author'] = [
+      'grant_view' => 0,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+    ];
+    $settings->set($type, $grants);
+  }
+  $i = 1;
+  foreach (user_roles() as $id => $role) {
+    $role_alias[$id] = [
+      'alias' => $role->label(),
+      'name' => $role->label(),
+      'weight' => 0,
+      'allow' => 0,
+    ];
+    $role_map[$id] = $i;
+    $i++;
+  }
+  $settings->set('role_alias', $role_alias);
+  $settings->set('role_map', $role_map);
+  $settings->save();
+}
+
+/**
+ * Implements hook_schema().
+ */
+function nodeaccess_schema() {
+  $schema['nodeaccess'] = [
+    'fields' => [
+      'nid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'gid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'realm' => [
+        'type' => 'varchar',
+        'length' => 191,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'grant_view'  => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'grant_update' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'grant_delete' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['nid', 'gid', 'realm'],
+  ];
+  return $schema;
+}
+
+/**
+ * Update nodeaccess allowed role settings.
+ */
+function nodeaccess_update_8101() {
+  $config = \Drupal::configFactory()->getEditable('nodeaccess.settings');
+  $role_alias = $config->get('role_alias');
+  foreach (user_roles() as $id => $role) {
+    if ($role_alias[$id]) {
+      $role_alias[$id]['alias'] = $role->label();
+      $role_alias[$id]['name'] = $role->label();
+    }
+    else {
+      $role_alias[$id] = [
+        'alias' => $role->label(),
+        'name' => $role->label(),
+        'weight' => 0,
+        'allow' => 0,
+      ];
+    }
+    $i++;
+  }
+  $config->set('role_alias', $role_alias);
+  $config->save();
+}
