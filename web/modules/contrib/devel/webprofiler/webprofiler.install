@@ -5,6 +5,8 @@
  * Install, update and uninstall functions for the webprofiler module.
  */
 
+use Drupal\Core\Url;
+
 /**
  * Implements hook_schema().
  */
@@ -175,12 +177,12 @@ function webprofiler_update_8001() {
   $database = \Drupal::database();
   $schema = $database->schema();
 
-  $spec = [
+  $spec = array(
     'description' => 'Profile status code.',
     'type' => 'int',
     'size' => 'small',
     'unsigned' => TRUE,
     'not null' => TRUE,
-  ];
+  );
   $schema->addField('webprofiler', 'status_code', $spec);
 }

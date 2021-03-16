@@ -790,19 +790,23 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * - Rerouting outgoing emails.
  *
  * Keep this code block at the end of this file to take full effect.
+}
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+
 $databases['default']['default'] = array (
-  'database' => 'bilboempresas',
-  'username' => 'produccion',
-  'password' => 'produccion',
+  'database' => 'ddbb',
+  'username' => 'user',
+  'password' => 'pass',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+
 $settings['config_sync_directory'] = 'sites/default/files/config_a-kN6Qft6sVnX0djtem-WXbem83u0gCJXMgwZvAk5tCO45R5y3gz27M6d5CLttb0KTRQIaBL3w/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}

@@ -30,5 +30,4 @@ class DecoratorPass implements CompilerPassInterface {
       ->addArgument(new Reference('webprofiler.mail'))
       ->setProperty('_serviceId', 'plugin.manager.mail');
   }
-
 }

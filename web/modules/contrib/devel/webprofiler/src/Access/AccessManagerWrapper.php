@@ -32,7 +32,7 @@ class AccessManagerWrapper extends AccessManager {
       $account = $this->currentUser;
     }
     $route = $route_match->getRouteObject();
-    $checks = $route->getOption('_access_checks') ?: [];
+    $checks = $route->getOption('_access_checks') ?: array();
 
     // Filter out checks which require the incoming request.
     if (!isset($request)) {
@@ -67,7 +67,7 @@ class AccessManagerWrapper extends AccessManager {
       throw new AccessException("Access error in $service_id. Access services must return an object that implements AccessResultInterface.");
     }
 
-    if ($request) {
+    if($request) {
       $this->dataCollector->addAccessCheck($service_id, $callable, $request);
     }
 
@@ -80,5 +80,4 @@ class AccessManagerWrapper extends AccessManager {
   public function setDataCollector(RequestDataCollector $dataCollector) {
     $this->dataCollector = $dataCollector;
   }
-
 }

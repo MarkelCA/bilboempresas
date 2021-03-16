@@ -3,9 +3,8 @@
 namespace Drupal\Tests\devel\Kernel;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
-use Drupal\Core\Messenger\MessengerTrait;
-use Drupal\devel\Twig\Extension\Debug;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\devel\Twig\Extension\Debug;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 
@@ -17,7 +16,6 @@ use Drupal\user\Entity\User;
 class DevelTwigExtensionTest extends KernelTestBase {
 
   use DevelDumperTestTrait;
-  use MessengerTrait;
 
   /**
    * The user used in test.
@@ -148,27 +146,27 @@ class DevelTwigExtensionTest extends KernelTestBase {
     // Ensures that if no argument is passed to the function the twig context is
     // dumped.
     $output = (string) $environment->renderInline($template, $context);
-    $this->assertStringContainsString($expected_template_output, $output, 'When no argument passed');
+    $this->assertContains($expected_template_output, $output);
     $this->assertContainsDump($output, $context, 'Twig context');
 
     // Ensures that if an argument is passed to the function it is dumped.
     $template = 'test-with-context {{ twig_string }} {{ twig_array.first }} {{ twig_array.second }}{{ devel_dump(twig_array) }}';
     $output = (string) $environment->renderInline($template, $context);
-    $this->assertStringContainsString($expected_template_output, $output, 'When one argument is passed');
+    $this->assertContains($expected_template_output, $output);
     $this->assertContainsDump($output, $context['twig_array']);
 
     // Ensures that if more than one argument is passed the function works
     // properly and every argument is dumped separately.
     $template = 'test-with-context {{ twig_string }} {{ twig_array.first }} {{ twig_array.second }}{{ devel_dump(twig_string, twig_array.first, twig_array, twig_object) }}';
     $output = (string) $environment->renderInline($template, $context);
-    $this->assertStringContainsString($expected_template_output, $output, 'When multiple arguments are passed');
+    $this->assertContains($expected_template_output, $output);
     $this->assertContainsDump($output, $context['twig_string']);
     $this->assertContainsDump($output, $context['twig_array']['first']);
     $this->assertContainsDump($output, $context['twig_array']);
     $this->assertContainsDump($output, $context['twig_object']);
 
     // Clear messages.
-    $this->messenger()->deleteAll();
+    drupal_get_messages();
 
     $retrieve_message = function ($messages, $index) {
       return isset($messages['status'][$index]) ? (string) $messages['status'][$index] : NULL;
@@ -178,23 +176,23 @@ class DevelTwigExtensionTest extends KernelTestBase {
     // dumped.
     $template = 'test-with-context {{ twig_string }} {{ twig_array.first }} {{ twig_array.second }}{{ devel_message() }}';
     $output = (string) $environment->renderInline($template, $context);
-    $this->assertStringContainsString($expected_template_output, $output, 'When no argument passed');
-    $messages = \Drupal::messenger()->deleteAll();
+    $this->assertContains($expected_template_output, $output);
+    $messages = drupal_get_messages();
     $this->assertDumpExportEquals($retrieve_message($messages, 0), $context, 'Twig context');
 
     // Ensures that if an argument is passed to the function it is dumped.
     $template = 'test-with-context {{ twig_string }} {{ twig_array.first }} {{ twig_array.second }}{{ devel_message(twig_array) }}';
     $output = (string) $environment->renderInline($template, $context);
-    $this->assertStringContainsString($expected_template_output, $output, 'When one argument is passed');
-    $messages = $this->messenger()->deleteAll();
+    $this->assertContains($expected_template_output, $output);
+    $messages = drupal_get_messages();
     $this->assertDumpExportEquals($retrieve_message($messages, 0), $context['twig_array']);
 
     // Ensures that if more than one argument is passed to the function works
     // properly and every argument is dumped separately.
     $template = 'test-with-context {{ twig_string }} {{ twig_array.first }} {{ twig_array.second }}{{ devel_message(twig_string, twig_array.first, twig_array, twig_object) }}';
     $output = (string) $environment->renderInline($template, $context);
-    $this->assertStringContainsString($expected_template_output, $output, 'When multiple arguments are passed');
-    $messages = $this->messenger()->deleteAll();
+    $this->assertContains($expected_template_output, $output);
+    $messages = drupal_get_messages();
     $this->assertDumpExportEquals($retrieve_message($messages, 0), $context['twig_string']);
     $this->assertDumpExportEquals($retrieve_message($messages, 1), $context['twig_array']['first']);
     $this->assertDumpExportEquals($retrieve_message($messages, 2), $context['twig_array']);

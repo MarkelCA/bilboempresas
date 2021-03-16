@@ -7,7 +7,6 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
-use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
@@ -16,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Toolbar integration handler.
  */
-class ToolbarHandler implements ContainerInjectionInterface, TrustedCallbackInterface {
+class ToolbarHandler implements ContainerInjectionInterface {
 
   use StringTranslationTrait;
 
@@ -66,13 +65,6 @@ class ToolbarHandler implements ContainerInjectionInterface, TrustedCallbackInte
       $container->get('config.factory'),
       $container->get('current_user')
     );
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function trustedCallbacks() {
-    return ['lazyBuilder'];
   }
 
   /**

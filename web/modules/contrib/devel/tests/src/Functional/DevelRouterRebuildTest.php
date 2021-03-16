@@ -2,12 +2,21 @@
 
 namespace Drupal\Tests\devel\Functional;
 
+use Drupal\Tests\BrowserTestBase;
+
 /**
  * Tests routes rebuild.
  *
  * @group devel
  */
-class DevelRouterRebuildTest extends DevelBrowserTestBase {
+class DevelRouterRebuildTest extends BrowserTestBase {
+
+  /**
+   * Modules to enable.
+   *
+   * @var array
+   */
+  public static $modules = ['devel', 'devel_test'];
 
   /**
    * Test routes rebuild.
@@ -19,7 +28,8 @@ class DevelRouterRebuildTest extends DevelBrowserTestBase {
     $this->drupalGet('devel/menu/reset');
     $this->assertSession()->statusCodeEquals(403);
 
-    $this->drupalLogin($this->adminUser);
+    $web_user = $this->drupalCreateUser(['administer site configuration']);
+    $this->drupalLogin($web_user);
 
     $this->drupalGet('devel/menu/reset');
     $this->assertSession()->statusCodeEquals(200);
@@ -27,7 +37,7 @@ class DevelRouterRebuildTest extends DevelBrowserTestBase {
     $route_rebuild_state = \Drupal::state()->get('devel_test_route_rebuild');
     $this->assertEmpty($route_rebuild_state);
 
-    $this->drupalPostForm('devel/menu/reset', [], 'Rebuild');
+    $this->drupalPostForm('devel/menu/reset', [], t('Rebuild'));
     $this->assertSession()->pageTextContains('The router has been rebuilt.');
     $route_rebuild_state = \Drupal::state()->get('devel_test_route_rebuild');
     $this->assertEquals('Router rebuild fired', $route_rebuild_state);

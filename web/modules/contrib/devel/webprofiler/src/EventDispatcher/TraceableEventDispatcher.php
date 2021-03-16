@@ -9,7 +9,7 @@ use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
- * Class TraceableEventDispatcher.
+ * Class TraceableEventDispatcher
  */
 class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements EventDispatcherTraceableInterface {
 
@@ -48,12 +48,9 @@ class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements 
   /**
    * {@inheritdoc}
    */
-  public function dispatch($event, $event_name = NULL) {
-    // Temporary hack for 9.0 and 9.1 compat. See https://gitlab.com/drupalspoons/devel/-/issues/344.
-    if (is_string($event)) {
-      $event_obj = $event_name ?? new Event();
-      $event_name = $event;
-      $event = $event_obj;
+  public function dispatch($event_name, Event $event = NULL) {
+    if ($event === NULL) {
+      $event = new Event();
     }
 
     $this->preDispatch($event_name, $event);
@@ -68,7 +65,7 @@ class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements 
 
       // Invoke listeners and resolve callables if necessary.
       foreach ($this->listeners[$event_name] as $priority => &$definitions) {
-        foreach ($definitions as &$definition) {
+        foreach ($definitions as $key => &$definition) {
           if (!isset($definition['callable'])) {
             $definition['callable'] = [
               $this->container->get($definition['service'][0]),
@@ -120,16 +117,14 @@ class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements 
   /**
    * Called before dispatching the event.
    *
-   * @param string $eventName
-   *   The event name.
-   * @param \Symfony\Component\EventDispatcher\Event $event
-   *   The event.
+   * @param string $eventName The event name
+   * @param Event $event The event
    */
   protected function preDispatch($eventName, Event $event) {
     switch ($eventName) {
       case KernelEvents::VIEW:
       case KernelEvents::RESPONSE:
-        // Stop only if a controller has been executed.
+        // stop only if a controller has been executed
         if ($this->stopwatch->isStarted('controller')) {
           $this->stopwatch->stop('controller');
         }
@@ -140,17 +135,14 @@ class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements 
   /**
    * Called after dispatching the event.
    *
-   * @param string $eventName
-   *   The event name.
-   * @param \Symfony\Component\EventDispatcher\Event $event
-   *   The event.
+   * @param string $eventName The event name
+   * @param Event $event The event
    */
   protected function postDispatch($eventName, Event $event) {
     switch ($eventName) {
       case KernelEvents::CONTROLLER:
         $this->stopwatch->start('controller', 'section');
         break;
-
       case KernelEvents::RESPONSE:
         $token = $event->getResponse()->headers->get('X-Debug-Token');
         try {
@@ -159,11 +151,9 @@ class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements 
         catch (\LogicException $e) {
         }
         break;
-
       case KernelEvents::TERMINATE:
-        // In the special case described in the `preDispatch` method above, the
-        // `$token` section does not exist, then closing it throws an exception
-        // which must be caught.
+        // In the special case described in the `preDispatch` method above, the `$token` section
+        // does not exist, then closing it throws an exception which must be caught.
         $token = $event->getResponse()->headers->get('X-Debug-Token');
         try {
           $this->stopwatch->stopSection($token);
@@ -217,9 +207,6 @@ class TraceableEventDispatcher extends ContainerAwareEventDispatcher implements 
     }
   }
 
-  /**
-   *
-   */
   private function isClosure($t) {
     return is_object($t) && ($t instanceof \Closure);
   }

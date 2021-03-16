@@ -2,6 +2,10 @@
     <div id="cover-description">
         <h1 id='main-cover-title' class='block'>{{ data.title }}</h1>
         <h2> {{ data.company }} </h2>
-        <img src={{ data.imgSrc }}  alt="company-logo">
+        <a href='/node/{{ data.id }}/edit' class='btn btn-primary'>Editar</a>
+
+          {% block content %}
+                {{ dump(content) }}
+          {% endblock %}
     </div>
 </div>

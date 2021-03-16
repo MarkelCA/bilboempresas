@@ -6,7 +6,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Theme\ThemeNegotiator;
 
 /**
- * Class ThemeNegotiatorWrapper.
+ * Class ThemeNegotiatorWrapper
  */
 class ThemeNegotiatorWrapper extends ThemeNegotiator {
 
@@ -26,8 +26,7 @@ class ThemeNegotiatorWrapper extends ThemeNegotiator {
     if (property_exists($this, 'classResolver')) {
       $classResolver = $this->classResolver;
       $negotiators = $this->negotiators;
-    }
-    else {
+    } else {
       $classResolver = \Drupal::classResolver();
       $negotiators = $this->getSortedNegotiators();
     }
@@ -35,8 +34,7 @@ class ThemeNegotiatorWrapper extends ThemeNegotiator {
     foreach ($negotiators as $negotiator_id) {
       if (property_exists($this, 'classResolver')) {
         $negotiator = $classResolver->getInstanceFromDefinition($negotiator_id);
-      }
-      else {
+      } else {
         $negotiator = $negotiator_id;
       }
 
@@ -63,7 +61,7 @@ class ThemeNegotiatorWrapper extends ThemeNegotiator {
    * @return array|\Drupal\Core\Theme\ThemeNegotiatorInterface[]
    *   An array of theme negotiator objects.
    *
-   * @todo Remove this method when we decide to drop Drupal 8.3.x support.
+   * TODO: remove this method when we decide to drop Drupal 8.3.x support.
    */
   protected function getSortedNegotiators() {
     if (!isset($this->sortedNegotiators)) {

@@ -68,7 +68,7 @@ class EventInfoController extends ControllerBase {
         'header' => TRUE,
       ];
 
-      foreach ($listeners as $listener) {
+      foreach ($listeners as $priority => $listener) {
         $row['name'] = [
           'data' => $event_name,
           'class' => ['visually-hidden'],
@@ -78,7 +78,7 @@ class EventInfoController extends ControllerBase {
           'data' => $this->resolveCallableName($listener),
         ];
         $row['priority'] = [
-          'data' => $this->eventDispatcher->getListenerPriority($event_name, $listener),
+          'data' => $priority,
         ];
         $rows[] = $row;
       }

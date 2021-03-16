@@ -3,13 +3,28 @@
 namespace Drupal\Tests\devel\Functional;
 
 use Drupal\Core\Url;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Tests devel menu links.
  *
  * @group devel
  */
-class DevelMenuLinksTest extends DevelBrowserTestBase {
+class DevelMenuLinksTest extends BrowserTestBase {
+
+  /**
+   * Modules to enable.
+   *
+   * @var array
+   */
+  public static $modules = ['devel', 'block', 'devel_test'];
+
+  /**
+   * The user for tests.
+   *
+   * @var \Drupal\user\UserInterface
+   */
+  protected $develUser;
 
   /**
    * {@inheritdoc}
@@ -21,7 +36,9 @@ class DevelMenuLinksTest extends DevelBrowserTestBase {
     // properly.
     $this->drupalPlaceBlock('system_menu_block:devel');
     $this->drupalPlaceBlock('page_title_block');
-    $this->drupalLogin($this->adminUser);
+
+    $this->develUser = $this->drupalCreateUser(['access devel information', 'administer site configuration']);
+    $this->drupalLogin($this->develUser);
   }
 
   /**
@@ -30,31 +47,31 @@ class DevelMenuLinksTest extends DevelBrowserTestBase {
   public function testCsrfProtectedLinks() {
     // Ensure CSRF link are not accessible directly.
     $this->drupalGet('devel/run-cron');
-    $this->assertSession()->statusCodeEquals(403);
+    $this->assertResponse(403);
     $this->drupalGet('devel/cache/clear');
-    $this->assertSession()->statusCodeEquals(403);
+    $this->assertResponse(403);
 
     // Ensure clear cache link works properly.
-    $this->assertSession()->linkExists('Cache clear');
+    $this->assertLink('Cache clear');
     $this->clickLink('Cache clear');
-    $this->assertSession()->pageTextContains('Cache cleared.');
+    $this->assertText('Cache cleared.');
 
     // Ensure run cron link works properly.
-    $this->assertSession()->linkExists('Run cron');
+    $this->assertLink('Run cron');
     $this->clickLink('Run cron');
-    $this->assertSession()->pageTextContains('Cron ran successfully.');
+    $this->assertText('Cron ran successfully.');
 
     // Ensure CSRF protected links work properly after change session.
     $this->drupalLogout();
-    $this->drupalLogin($this->adminUser);
+    $this->drupalLogin($this->develUser);
 
-    $this->assertSession()->linkExists('Cache clear');
+    $this->assertLink('Cache clear');
     $this->clickLink('Cache clear');
-    $this->assertSession()->pageTextContains('Cache cleared.');
+    $this->assertText('Cache cleared.');
 
-    $this->assertSession()->linkExists('Run cron');
+    $this->assertLink('Run cron');
     $this->clickLink('Run cron');
-    $this->assertSession()->pageTextContains('Cron ran successfully.');
+    $this->assertText('Cron ran successfully.');
   }
 
   /**
@@ -67,27 +84,26 @@ class DevelMenuLinksTest extends DevelBrowserTestBase {
     $destination = Url::fromRoute('devel.simple_page', [], ['absolute' => FALSE]);
 
     $this->drupalGet($url);
-    $this->assertSession()->linkExists('Reinstall Modules');
-    $this->clickLink('Reinstall Modules');
-    $this->assertSession()->addressEquals('devel/reinstall', ['query' => ['destination' => $destination->toString()]]);
+    $this->assertLink(t('Reinstall Modules'));
+    $this->clickLink(t('Reinstall Modules'));
+    $this->assertUrl('devel/reinstall', ['query' => ['destination' => $destination->toString()]]);
 
     $this->drupalGet($url);
-    $this->assertSession()->linkExists('Rebuild Menu');
-    $this->clickLink('Rebuild Menu');
-    $this->assertSession()->addressEquals('devel/menu/reset', ['query' => ['destination' => $destination->toString()]]);
+    $this->assertLink(t('Rebuild Menu'));
+    $this->clickLink(t('Rebuild Menu'));
+    $this->assertUrl('devel/menu/reset', ['query' => ['destination' => $destination->toString()]]);
 
     $this->drupalGet($url);
-    $this->assertSession()->linkExists('Cache clear');
-    $this->clickLink('Cache clear');
-    $this->assertSession()->pageTextContains('Cache cleared.');
-    $this->assertSession()->addressEquals($url);
+    $this->assertLink(t('Cache clear'));
+    $this->clickLink(t('Cache clear'));
+    $this->assertText('Cache cleared.');
+    $this->assertUrl($url);
 
     $this->drupalGet($url);
-    $this->assertSession()->linkExists('Run cron');
-    $this->clickLink('Run cron');
-    $this->assertSession()->pageTextContains('Cron ran successfully.');
-    $this->assertSession()->addressEquals($url);
-
+    $this->assertLink(t('Run cron'));
+    $this->clickLink(t('Run cron'));
+    $this->assertText(t('Cron ran successfully.'));
+    $this->assertUrl($url);
   }
 
 }

@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\devel\Kernel;
 
-use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
@@ -13,8 +12,6 @@ use Drupal\user\Entity\User;
  * @group devel
  */
 class DevelQueryDebugTest extends KernelTestBase {
-
-  use MessengerTrait;
 
   /**
    * {@inheritdoc}
@@ -80,13 +77,9 @@ class DevelQueryDebugTest extends KernelTestBase {
     $query->execute();
 
     $messages = $this->getDrupalMessages();
-    $this->assertNotEmpty($messages['status']);
+    $this->assertTrue(!empty($messages['status']));
     $this->assertCount(1, $messages['status']);
-    $actual_message = strip_tags($messages['status'][0]);
-    // In Drupal 9 the literals are quoted, but not in Drupal 8. We only need
-    // the actual content, so remove all quotes from the actual message found.
-    $actual_message = str_replace(['"', "'"], ['', ''], $actual_message);
-    $this->assertEquals($expected_message, $actual_message);
+    $this->assertEquals(strip_tags($messages['status'][0]), $expected_message);
   }
 
   /**
@@ -116,21 +109,19 @@ class DevelQueryDebugTest extends KernelTestBase {
     $query->execute();
 
     $messages = $this->getDrupalMessages();
-    $this->assertNotEmpty($messages['status']);
+    $this->assertTrue(!empty($messages['status']));
     $this->assertCount(1, $messages['status']);
-    $actual_message = strip_tags($messages['status'][0]);
-    $actual_message = str_replace(['"', "'"], ['', ''], $actual_message);
-    $this->assertEquals($expected_message, $actual_message);
+    $this->assertEquals(strip_tags($messages['status'][0]), $expected_message);
   }
 
   /**
-   * Retrieves and removes the drupal messages.
+   * Retrieves the drupal messages.
    *
    * @return array
    *   The messages
    */
   protected function getDrupalMessages() {
-    return $this->messenger()->deleteAll();
+    return drupal_get_messages();
   }
 
 }

@@ -13,12 +13,12 @@ use Drupal\webprofiler\Entity\EntityDecorator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class ConfigEntityStorageDecorator.
+ * Class ConfigEntityStorageDecorator
  */
 class ConfigEntityStorageDecorator extends EntityDecorator implements ConfigEntityStorageInterface, ImportableEntityStorageInterface, EntityHandlerInterface {
 
   /**
-   * @param \Drupal\Core\Config\ConfigEntityStorageInterface $controller
+   * @param ConfigEntityStorageInterface $controller
    */
   public function __construct(ConfigEntityStorageInterface $controller) {
     parent::__construct($controller);

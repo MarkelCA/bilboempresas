@@ -37,5 +37,4 @@ class CssCollectionRendererWrapper implements AssetCollectionRendererInterface {
 
     return $this->assetCollectionRenderer->render($css_assets);
   }
-
 }

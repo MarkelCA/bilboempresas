@@ -24,14 +24,14 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
    * @param \Drupal\Core\Database\Connection $database
    *   The database connection.
    */
-  public function __construct(Connection $database) {
+  function __construct(Connection $database) {
     $this->database = $database;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function find($ip, $url, $limit, $method, $start = NULL, $end = NULL): array {
+  public function find($ip, $url, $limit, $method, $start = NULL, $end = NULL) {
     $select = $this->database->select('webprofiler', 'wp', ['fetch' => \PDO::FETCH_ASSOC]);
 
     if (NULL === $start) {
@@ -69,7 +69,7 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
       'url',
       'time',
       'parent',
-      'status_code',
+      'status_code'
     ]);
     $select->orderBy('time', 'DESC');
     $select->range(0, $limit);
@@ -80,7 +80,7 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
   /**
    * {@inheritdoc}
    */
-  public function read($token): ?Profile {
+  public function read($token) {
     $record = $this->database->select('webprofiler', 'w')
       ->fields('w')
       ->condition('token', $token)
@@ -94,7 +94,7 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
   /**
    * {@inheritdoc}
    */
-  public function write(Profile $profile): bool {
+  public function write(Profile $profile) {
     $args = [
       'token' => $profile->getToken(),
       'parent' => $profile->getParentToken(),
@@ -124,8 +124,7 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
       }
 
       $status = TRUE;
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $status = FALSE;
     }
 
@@ -143,7 +142,7 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
    * @param string $token
    * @param $data
    *
-   * @return \Symfony\Component\HttpKernel\Profiler\Profile
+   * @return Profile
    */
   private function createProfileFromData($token, $data) {
     $profile = new Profile($token);
@@ -156,5 +155,4 @@ class DatabaseProfilerStorage implements ProfilerStorageInterface {
 
     return $profile;
   }
-
 }

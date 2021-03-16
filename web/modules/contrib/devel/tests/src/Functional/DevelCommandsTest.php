@@ -6,7 +6,10 @@ use Drupal\Tests\BrowserTestBase;
 use Drush\TestTraits\DrushTestTrait;
 
 /**
- * Note: Drush must be installed. Add it to your require-dev in composer.json.
+ * Note: Drush must be installed. See
+ * https://cgit.drupalcode.org/devel/tree/drupalci.yml?h=8.x-2.x and its docs
+ * at
+ * https://www.drupal.org/drupalorg/docs/drupal-ci/customizing-drupalci-testing-for-projects
  */
 
 /**
@@ -21,11 +24,6 @@ class DevelCommandsTest extends BrowserTestBase {
    * {@inheritdoc}
    */
   public static $modules = ['devel'];
-
-  /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'stark';
 
   /**
    * Tests drush commands.

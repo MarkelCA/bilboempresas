@@ -37,5 +37,4 @@ class JsCollectionRendererWrapper implements AssetCollectionRendererInterface {
 
     return $this->assetCollectionRenderer->render($js_assets);
   }
-
 }

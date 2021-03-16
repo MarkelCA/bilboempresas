@@ -2,12 +2,14 @@
 
 namespace Drupal\Tests\devel\Functional;
 
+use Drupal\Tests\BrowserTestBase;
+
 /**
  * Tests layout info pages and links.
  *
  * @group devel
  */
-class DevelLayoutInfoTest extends DevelBrowserTestBase {
+class DevelLayoutInfoTest extends BrowserTestBase {
 
   /**
    * {@inheritdoc}
@@ -15,11 +17,27 @@ class DevelLayoutInfoTest extends DevelBrowserTestBase {
   public static $modules = ['devel', 'block', 'layout_discovery'];
 
   /**
+   * The user for the test.
+   *
+   * @var \Drupal\user\UserInterface
+   */
+  protected $develUser;
+
+  /**
    * {@inheritdoc}
    */
   protected function setUp() {
+    // TODO find a cleaner way to skip layout info tests when running tests on
+    // Drupal branch < 8.3.x.
+    if (version_compare(\Drupal::VERSION, '8.3', '<')) {
+      $this->markTestSkipped('Devel Layout Info Tests only available on version 8.3.x+.');
+    }
+
     parent::setUp();
+
     $this->drupalPlaceBlock('page_title_block');
+
+    $this->develUser = $this->drupalCreateUser(['access devel information']);
     $this->drupalLogin($this->develUser);
   }
 

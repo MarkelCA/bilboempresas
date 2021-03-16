@@ -2,6 +2,7 @@
 
 namespace Drupal\devel_generate\Plugin\DevelGenerate;
 
+use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\Language;
@@ -58,7 +59,7 @@ class VocabularyDevelGenerate extends DevelGenerateBase implements ContainerFact
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration, $plugin_id, $plugin_definition,
-      $container->get('entity_type.manager')->getStorage('taxonomy_vocabulary')
+      $container->get('entity.manager')->getStorage('taxonomy_vocabulary')
     );
   }
 
@@ -66,26 +67,26 @@ class VocabularyDevelGenerate extends DevelGenerateBase implements ContainerFact
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
-    $form['num'] = [
+    $form['num'] = array(
       '#type' => 'number',
       '#title' => $this->t('Number of vocabularies?'),
       '#default_value' => $this->getSetting('num'),
       '#required' => TRUE,
       '#min' => 0,
-    ];
-    $form['title_length'] = [
+    );
+    $form['title_length'] = array(
       '#type' => 'number',
       '#title' => $this->t('Maximum number of characters in vocabulary names'),
       '#default_value' => $this->getSetting('title_length'),
       '#required' => TRUE,
       '#min' => 2,
       '#max' => 255,
-    ];
-    $form['kill'] = [
+    );
+    $form['kill'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('Delete existing vocabularies before generating new ones.'),
       '#default_value' => $this->getSetting('kill'),
-    ];
+    );
 
     return $form;
   }
@@ -101,7 +102,7 @@ class VocabularyDevelGenerate extends DevelGenerateBase implements ContainerFact
 
     $new_vocs = $this->generateVocabularies($values['num'], $values['title_length']);
     if (!empty($new_vocs)) {
-      $this->setMessage($this->t('Created the following new vocabularies: @vocs', ['@vocs' => implode(', ', $new_vocs)]));
+      $this->setMessage($this->t('Created the following new vocabularies: @vocs', array('@vocs' => implode(', ', $new_vocs))));
     }
   }
 
@@ -125,13 +126,13 @@ class VocabularyDevelGenerate extends DevelGenerateBase implements ContainerFact
    *   Array containing the generated vocabularies id.
    */
   protected function generateVocabularies($records, $maxlength = 12) {
-    $vocabularies = [];
+    $vocabularies = array();
 
     // Insert new data:
     for ($i = 1; $i <= $records; $i++) {
       $name = $this->getRandom()->word(mt_rand(2, $maxlength));
 
-      $vocabulary = $this->vocabularyStorage->create([
+      $vocabulary = $this->vocabularyStorage->create(array(
         'name' => $name,
         'vid' => mb_strtolower($name),
         'langcode' => Language::LANGCODE_NOT_SPECIFIED,
@@ -141,7 +142,7 @@ class VocabularyDevelGenerate extends DevelGenerateBase implements ContainerFact
         'multiple' => 1,
         'required' => 0,
         'relations' => 1,
-      ]);
+      ));
 
       // Populate all fields with sample values.
       $this->populateFields($vocabulary);
@@ -157,15 +158,15 @@ class VocabularyDevelGenerate extends DevelGenerateBase implements ContainerFact
   /**
    * {@inheritdoc}
    */
-  public function validateDrushParams(array $args, array $options = []) {
-    $values = [
+  public function validateDrushParams($args, $options = []) {
+    $values = array(
       'num' => array_shift($args),
-      'kill' => $options['kill'],
+      'kill' => $this->isDrush8() ? drush_get_option('kill') : $options['kill'],
       'title_length' => 12,
-    ];
+    );
 
     if ($this->isNumber($values['num']) == FALSE) {
-      throw new \Exception(dt('Invalid number of vocabularies: @num.', ['@num' => $values['num']]));
+      throw new \Exception(dt('Invalid number of vocabularies: @num.', array('@num' => $values['num'])));
     }
 
     return $values;

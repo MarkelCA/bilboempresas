@@ -3,13 +3,19 @@
 namespace Drupal\Tests\devel\Functional;
 
 use Behat\Mink\Element\NodeElement;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Tests devel state editor.
  *
  * @group devel
  */
-class DevelStateEditorTest extends DevelBrowserTestBase {
+class DevelStateEditorTest extends BrowserTestBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static $modules = ['devel', 'block'];
 
   /**
    * The state store.
@@ -19,12 +25,31 @@ class DevelStateEditorTest extends DevelBrowserTestBase {
   protected $state;
 
   /**
+   * The user for tests.
+   *
+   * @var \Drupal\user\UserInterface
+   */
+  protected $develUser;
+
+  /**
+   * The user for tests.
+   *
+   * @var \Drupal\user\UserInterface
+   */
+  protected $adminUser;
+
+  /**
    * {@inheritdoc}
    */
   public function setUp() {
     parent::setUp();
+
     $this->state = $this->container->get('state');
+
     $this->drupalPlaceBlock('page_title_block');
+
+    $this->develUser = $this->drupalCreateUser(['access devel information']);
+    $this->adminUser = $this->drupalCreateUser(['access devel information', 'administer site configuration']);
   }
 
   /**

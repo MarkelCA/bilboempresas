@@ -5,6 +5,7 @@ namespace Drupal\devel_generate\Form;
 use Drupal\Component\Plugin\PluginManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\devel_generate\DevelGenerateException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -104,7 +105,7 @@ class DevelGenerateForm extends FormBase {
       $instance = $this->getPluginInstance($plugin_id);
       $instance->generate($form_state->getValues());
     }
-    catch (\Exception $e) {
+    catch (DevelGenerateException $e) {
       $this->logger('DevelGenerate', $this->t('Failed to generate elements due to "%error".', ['%error' => $e->getMessage()]));
       $this->messenger()->addMessage($this->t('Failed to generate elements due to "%error".', ['%error' => $e->getMessage()]));
     }

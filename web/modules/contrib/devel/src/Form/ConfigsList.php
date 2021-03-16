@@ -23,30 +23,30 @@ class ConfigsList extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, $filter = '') {
-    $form['filter'] = [
+    $form['filter'] = array(
       '#type' => 'details',
-      '#title' => $this->t('Filter variables'),
-      '#attributes' => ['class' => ['container-inline']],
+      '#title' => t('Filter variables'),
+      '#attributes' => array('class' => array('container-inline')),
       '#open' => isset($filter) && trim($filter) != '',
-    ];
-    $form['filter']['name'] = [
+    );
+    $form['filter']['name'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Variable name'),
       '#title_display' => 'invisible',
       '#default_value' => $filter,
-    ];
+    );
     $form['filter']['actions'] = ['#type' => 'actions'];
     $form['filter']['actions']['show'] = [
       '#type' => 'submit',
       '#value' => $this->t('Filter'),
     ];
 
-    $header = [
-      'name' => ['data' => $this->t('Name')],
-      'edit' => ['data' => $this->t('Operations')],
-    ];
+    $header = array(
+      'name' => array('data' => $this->t('Name')),
+      'edit' => array('data' => $this->t('Operations')),
+    );
 
-    $rows = [];
+    $rows = array();
 
     $destination = $this->getDestinationArray();
 
@@ -54,23 +54,23 @@ class ConfigsList extends FormBase {
     $names = $this->configFactory()->listAll($filter);
 
     foreach ($names as $config_name) {
-      $operations['edit'] = [
+      $operations['edit'] = array(
         'title' => $this->t('Edit'),
-        'url' => Url::fromRoute('devel.config_edit', ['config_name' => $config_name]),
-        'query' => $destination,
-      ];
-      $rows[] = [
+        'url' => Url::fromRoute('devel.config_edit', array('config_name' => $config_name)),
+        'query' => $destination
+      );
+      $rows[] = array(
         'name' => $config_name,
-        'operation' => ['data' => ['#type' => 'operations', '#links' => $operations]],
-      ];
+        'operation' => array('data' => array('#type' => 'operations', '#links' => $operations)),
+      );
     }
 
-    $form['variables'] = [
+    $form['variables'] = array(
       '#type' => 'table',
       '#header' => $header,
       '#rows' => $rows,
-      '#empty' => $this->t('No variables found'),
-    ];
+      '#empty' => $this->t('No variables found')
+    );
 
     return $form;
   }
@@ -80,7 +80,7 @@ class ConfigsList extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $filter = $form_state->getValue('name');
-    $form_state->setRedirectUrl(Url::FromRoute('devel.configs_list', ['filter' => Html::escape($filter)]));
+    $form_state->setRedirectUrl(Url::FromRoute('devel.configs_list', array('filter' => Html::escape($filter))));
   }
 
 }

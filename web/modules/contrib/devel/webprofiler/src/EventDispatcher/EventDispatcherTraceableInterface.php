@@ -4,9 +4,6 @@ namespace Drupal\webprofiler\EventDispatcher;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-/**
- *
- */
 interface EventDispatcherTraceableInterface extends EventDispatcherInterface {
 
   /**

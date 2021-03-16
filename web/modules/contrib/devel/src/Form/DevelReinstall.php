@@ -2,7 +2,6 @@
 
 namespace Drupal\devel\Form;
 
-use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -21,23 +20,13 @@ class DevelReinstall extends FormBase {
   protected $moduleInstaller;
 
   /**
-   * The module extension list.
-   *
-   * @var \Drupal\Core\Extension\ModuleExtensionList
-   */
-  protected $moduleExtensionList;
-
-  /**
    * Constructs a new DevelReinstall form.
    *
    * @param \Drupal\Core\Extension\ModuleInstallerInterface $module_installer
    *   The module installer.
-   * @param \Drupal\Core\Extension\ModuleExtensionList $extension_list_module
-   *   The module extension list.
    */
-  public function __construct(ModuleInstallerInterface $module_installer, ModuleExtensionList $extension_list_module) {
+  public function __construct(ModuleInstallerInterface $module_installer) {
     $this->moduleInstaller = $module_installer;
-    $this->moduleExtensionList = $extension_list_module;
   }
 
   /**
@@ -45,8 +34,7 @@ class DevelReinstall extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('module_installer'),
-      $container->get('extension.list.module')
+      $container->get('module_installer')
     );
   }
 
@@ -62,7 +50,7 @@ class DevelReinstall extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     // Get a list of all available modules.
-    $modules = $this->moduleExtensionList->reset()->getList();
+    $modules = system_rebuild_module_data();
 
     $uninstallable = array_filter($modules, function ($module) use ($modules) {
       return empty($modules[$module->getName()]->info['required']) && drupal_get_installed_schema_version($module->getName()) > SCHEMA_UNINSTALLED && $module->getName() !== 'devel';
@@ -157,8 +145,7 @@ class DevelReinstall extends FormBase {
       $this->moduleInstaller->uninstall($reinstall, FALSE);
       $this->moduleInstaller->install($reinstall, FALSE);
       $this->messenger()->addMessage($this->t('Uninstalled and installed: %names.', ['%names' => implode(', ', $reinstall)]));
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $this->messenger()->addError($this->t('Unable to reinstall modules. Error: %error.', ['%error' => $e->getMessage()]));
     }
   }

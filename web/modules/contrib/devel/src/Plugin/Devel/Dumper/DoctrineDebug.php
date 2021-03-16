@@ -33,9 +33,7 @@ class DoctrineDebug extends DevelDumperBase {
     // cross-site-scripting (XSS) vulnerabilities.
     $dump = Xss::filterAdmin($dump);
 
-    $config = \Drupal::config('devel.settings');
-    $debug_pre = $config->get('debug_pre');
-    $dump = ($debug_pre ? '<pre>' : '') . $name . $dump . ($debug_pre ? '</pre>' : '');
+    $dump = '<pre>' . $name . $dump . '</pre>';
 
     return $this->setSafeMarkup($dump);
   }

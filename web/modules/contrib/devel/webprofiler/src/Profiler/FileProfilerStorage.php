@@ -5,9 +5,6 @@ namespace Drupal\webprofiler\Profiler;
 use Symfony\Component\HttpKernel\Profiler\FileProfilerStorage as SymfonyFileProfilerStorage;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
-/**
- * Implements file profiler storage.
- */
 class FileProfilerStorage extends SymfonyFileProfilerStorage {
 
   /**
@@ -24,5 +21,4 @@ class FileProfilerStorage extends SymfonyFileProfilerStorage {
 
     return $profile;
   }
-
 }

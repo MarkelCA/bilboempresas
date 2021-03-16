@@ -6,13 +6,14 @@ use Drupal\Core\Link;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\devel\Plugin\Menu\DestinationMenuLink;
 use Drupal\webprofiler\DrupalDataCollectorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 
 /**
- * Class DevelDataCollector.
+ * Class DevelDataCollector
  */
 class DevelDataCollector extends DataCollector implements DrupalDataCollectorInterface {
 
@@ -79,16 +80,16 @@ class DevelDataCollector extends DataCollector implements DrupalDataCollectorInt
     $parameters->setMaxDepth(1)->onlyEnabledLinks();
     $tree = $menuLinkTreeService->load('devel', $parameters);
 
-    $manipulators = [
-      ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-      ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-    ];
+    $manipulators = array(
+      array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+      array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+    );
     $tree = $menuLinkTreeService->transform($tree, $manipulators);
 
-    $links = [];
+    $links = array();
 
     foreach ($tree as $item) {
-      /** @var \Drupal\devel\Plugin\Menu\DestinationMenuLink $link */
+      /** @var DestinationMenuLink $link */
       $link = $item->link;
       $renderable = Link::fromTextAndUrl($link->getTitle(), $link->getUrlObject())
         ->toRenderable();
@@ -99,5 +100,4 @@ class DevelDataCollector extends DataCollector implements DrupalDataCollectorInt
 
     return $links;
   }
-
 }
