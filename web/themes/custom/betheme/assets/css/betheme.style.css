@@ -9575,6 +9575,11 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+.page__content .view-lista-empresas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
 .block.block--subtitle.block--betheme-queesbilboempresas {
   background-color: #d4edda !important;
 }
@@ -9584,6 +9589,7 @@ a.text-dark:hover, a.text-dark:focus {
 .block .datos-empresa {
   padding-bottom: 1em;
   background: #e9ecef;
+  background: linear-gradient(186deg, #e9ecef 30%, #c8c8c8 100%);
 }
 .block .datos-empresa .datos-texto {
   width: 100%;
@@ -9600,6 +9606,9 @@ a.text-dark:hover, a.text-dark:focus {
   margin-bottom: 0.5em;
 }
 .block .datos-empresa .datos-texto > div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   margin: 0.5em;
   padding: 0.5em;
   border-bottom: 1px solid gray;
@@ -9624,7 +9633,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .node.node--promoted.empresa-thumb.empresa-thumb--full {
   border: 3px solid teal;
-  border-top: 3px solid lightblue;
   box-shadow: 10px 10px 5px grey;
 }
 

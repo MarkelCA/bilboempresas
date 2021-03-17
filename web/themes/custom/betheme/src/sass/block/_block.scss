@@ -9,7 +9,9 @@
     }
     .datos-empresa {
             padding-bottom: 1em;
-            background: #e9ecef ;
+            //background: #e9ecef ;
+            background: rgb(233,236,239);
+            background: linear-gradient(186deg, rgba(233,236,239,1) 30%, rgba(200,200,200,1) 100%);
             //rgb(70,70,227);
             //background: linear-gradient(90deg, rgba(70,70,227,1) 0%, rgba(0,143,255,1) 66%);
 
@@ -30,6 +32,9 @@
             }
 
              & > div{
+                display:flex;
+                align-content: center;
+                justify-content: center;
                 margin: .5em;
                 padding: .5em;
                 border-bottom: 1px solid gray;

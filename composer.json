@@ -32,7 +32,6 @@
         "drupal/gin_toolbar": "^1.0@beta",
         "drupal/kint": "^2.1",
         "drupal/module_filter": "^3.2",
-        "drupal/nodeaccess": "^1.0",
         "drupal/page_manager": "^4.0@beta",
         "drupal/radix": "^4.10",
         "drupal/simple_gmap": "^3.0",
