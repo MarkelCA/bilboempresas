@@ -24,6 +24,10 @@ class ControllerOwner extends ControllerBase {
         $user_company_id = $user->field_propietario_empresa->getValue()[0]['target_id'];
 
         $companyNode = \Drupal\node\Entity\Node::load($user_company_id);
+        $content = $companyNode;
+        echo '<pre>';
+        //var_dump($content);
+        echo '</pre>';
         $fields = array_keys($companyNode->getFieldDefinitions());
         foreach($fields as $field){
             $companyFields[$field] = $companyNode->$field->value;
