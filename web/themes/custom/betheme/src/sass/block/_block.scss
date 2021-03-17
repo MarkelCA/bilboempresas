@@ -7,4 +7,52 @@
                 background-color: #d4edda !important;
         }
     }
+    .datos-empresa {
+            padding-bottom: 1em;
+            background: #e9ecef ;
+            //rgb(70,70,227);
+            //background: linear-gradient(90deg, rgba(70,70,227,1) 0%, rgba(0,143,255,1) 66%);
+
+
+        .datos-texto {
+            width: 100%;
+            padding-top: 1em;
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat( auto-fit, minmax(450px, 1fr) );
+            text-align: center;
+            color: #4a4a4a;
+
+            .field__label {
+                color: #383838;
+                font-weight: normal;
+                margin-bottom: .5em;
+            }
+
+             & > div{
+                margin: .5em;
+                padding: .5em;
+                border-bottom: 1px solid gray;
+                margin: 0 15%;
+
+                a{
+                    color: #00773b;
+                }
+            }
+
+        }
+
+        .empresa-thumb__field-mapa, .mapa {
+            width: fit-content;
+        }
+
+        .mapa {
+            margin: 1em 0;
+            width: 50%;
+        }
+        .empresa-thumb__field-mapa, iframe{
+            width: 100%;
+            height: 300px;
+        }
+    }
 }

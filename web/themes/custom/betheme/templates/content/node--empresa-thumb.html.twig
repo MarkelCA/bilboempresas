@@ -18,14 +18,24 @@
   {{ title_prefix }}
   {{ title_suffix }}
 
-  {% block content %}
+  {% block content  %}
      {#{{ content }} #}
      {#<pre><h2>Context keys:</h2>{{ dump(_context|keys) }}</pre>#}
-     <h1 class="nombre_empresa text-uppercase text-center">{{ content.field_nombre_comercial }}</h1>
-     <div class="logo-empresa mx-auto">{{ content.field_company_thumbnail }}</div>
-     <div class="body">{{ content.body }}</div>
-     <hr>
-     <pre><h3>Content keys:</h2>{{ dump(content|keys) }}</h3></pre>
-    {#<div class="comollegar">{{ content.field_como_llegar }}</div>#}
+     <h1 class="nombre_empresa text-uppercase text-center bg-secondary text-white">{{ content.field_nombre_comercial }}</h1>
+     <div class="logo-empresa mx-auto col-8 col-sm-4  md-col-3 ">{{ content.field_company_thumbnail }}</div>
+     <div class="datos-empresa w-100">
+         <div class="datos-texto">
+             <div class="descripion-empresa">{{ content.field_descripcion_de_la_empresa }}</div>
+             <div class="direccion_pabellon">{{ content.field_direccion_no_del_pabellon_ }}</div>
+             <div class="telefono-contacto">{{ content.field_telefono_de_contacto }}</div>
+             <div class="productos-empresa">{{ content.field_productos }}</div>
+             <div class="servicios-emresa">{{ content.field_servicios }}</div>
+             <div class="pagina-web">{{ content.field_pagina_web }}</div>
+             <div class="comollegar">{{ content.field_como_llegar }}</div>
+         </div>
+         <div class="mapa mx-auto">{{ content.field_mapa }}</div>
+     </div>
   {% endblock %}
 </article>
+     <hr>
+     <pre><h3>Content keys:</h2>{{ dump(content|keys) }}</h3></pre>
