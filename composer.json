@@ -35,6 +35,7 @@
         "drupal/page_manager": "^4.0@beta",
         "drupal/radix": "^4.10",
         "drupal/simple_gmap": "^3.0",
+        "drupal/vardumper": "^1.5",
         "drush/drush": "^10.4",
         "kint-php/kint": "^3.3"
     },

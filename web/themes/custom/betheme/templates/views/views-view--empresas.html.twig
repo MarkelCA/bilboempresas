@@ -38,9 +38,6 @@
   ]
 %}
 <div  {{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
 
   {% if header %}
     <header>
@@ -69,3 +66,4 @@
 
   {{ feed_icons }}
 </div>
+<h3>Lista empresas rows: </h3>{{ kpr(rows) }}

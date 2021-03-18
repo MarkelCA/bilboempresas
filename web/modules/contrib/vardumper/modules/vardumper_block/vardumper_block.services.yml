@@ -1,0 +1,4 @@
+services:
+  vardumper_block:
+    class: \Drupal\vardumper_block\VarDumper\VarDumperBlock
+    arguments: ['@session']

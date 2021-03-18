@@ -9592,6 +9592,7 @@ a.text-dark:hover, a.text-dark:focus {
   background: linear-gradient(186deg, #e9ecef 30%, #c8c8c8 100%);
 }
 .block .datos-empresa .datos-texto {
+  position: inherit;
   width: 100%;
   padding-top: 1em;
   margin-top: 1.5rem;
@@ -9624,7 +9625,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .block .datos-empresa .mapa {
   margin: 1em 0;
-  width: 50%;
 }
 .block .datos-empresa .empresa-thumb__field-mapa, .block .datos-empresa iframe {
   width: 100%;
@@ -9643,4 +9643,99 @@ a.text-dark:hover, a.text-dark:focus {
 .logo-empresa div, .logo-empresa img {
   width: 100%;
   height: 100%;
+}
+
+.view-lista-empresas {
+  padding: 1.5em 0;
+  background-color: #d4edda;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+.view-lista-empresas > div {
+  font-size: 1.2em;
+  box-shadow: 10px 10px 5px grey;
+  color: white;
+  background-color: rgba(14, 12, 12, 0.43);
+  padding: 1.4em;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 1.2em auto;
+}
+.view-lista-empresas > div .views-field {
+  margin: 0.5em 0;
+}
+.view-lista-empresas > div .views-field .field__label {
+  font-style: italic;
+}
+.view-lista-empresas > div .views-field .field__item {
+  color: lightgreen;
+}
+.view-lista-empresas > div .views-field a {
+  color: lightblue;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.view-lista-empresas > div .views-field.views-field-field-nombre-comercial .field-content {
+  text-align: center;
+}
+.view-lista-empresas > div .views-field.views-field-field-nombre-comercial .field-content a {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5em;
+  border-radius: 20px;
+  transition: all 0.4s;
+  margin-top: 1.5em;
+}
+.view-lista-empresas > div .views-field.views-field-field-nombre-comercial .field-content a:hover {
+  background-color: white;
+  color: orange;
+}
+.view-lista-empresas > div .views-field.views-field-field-company-thumbnail {
+  margin: auto;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.view-lista-empresas > div .views-field.views-field-field-company-thumbnail .field-content * a, .view-lista-empresas > div .views-field.views-field-field-company-thumbnail .field-content * img {
+  display: block;
+  margin: auto;
+}
+.view-lista-empresas > div .views-field.views-field-field-company-thumbnail img {
+  width: 80%;
+  height: 180px;
+  border-radius: 100%;
+}
+.view-lista-empresas > div .views-field.views-field-field-descripcion-de-la-empresa .field__label {
+  text-align: center;
+  margin-bottom: 0.3em;
+}
+.view-lista-empresas > div .views-field.views-field-field-descripcion-de-la-empresa .field__item {
+  font-size: 0.9em;
+}
+
+.view-lista-pabellones {
+  background-color: blue;
+  padding: 1.5em 0;
+  background-image: url("../../src/img/background-pattern.jpg");
+  border-top: 1px solid grey;
+  margin: 1.5em 0;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+}
+.view-lista-pabellones .views-row {
+  border: 1px solid lightgray;
+  box-shadow: 10px 10px 5px grey;
+  padding: 1.4em;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 1.2em auto;
+  background-color: white;
 }

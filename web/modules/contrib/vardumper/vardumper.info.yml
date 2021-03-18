@@ -1,0 +1,12 @@
+type: module
+name: Vardumper
+description: Vardumper service and API for debugging variables in a pretty way using Symfony's VarDumper service.
+core: 8.x
+core_version_requirement: ^8 || ^9
+php: 5.3.10
+package: Development
+
+# Information added by Drupal.org packaging script on 2020-06-29
+version: '8.x-1.5'
+project: 'vardumper'
+datestamp: 1593424135

@@ -1,0 +1,4 @@
+services:
+  vardumper_watchdog:
+    class: \Drupal\vardumper_watchdog\VarDumper\VarDumperWatchdog
+    arguments: ['@logger.dblog']

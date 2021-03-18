@@ -17,6 +17,7 @@
 
 
         .datos-texto {
+            position:inherit;
             width: 100%;
             padding-top: 1em;
             margin-top: 1.5rem;
@@ -53,7 +54,6 @@
 
         .mapa {
             margin: 1em 0;
-            width: 50%;
         }
         .empresa-thumb__field-mapa, iframe{
             width: 100%;

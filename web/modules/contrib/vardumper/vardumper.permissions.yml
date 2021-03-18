@@ -1,0 +1,4 @@
+access vardumper information:
+  title: 'Access vardumper debug information'
+  description: 'Access vardumper information in block or Drupal messages.'
+  restrict access: TRUE
