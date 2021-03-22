@@ -56,8 +56,10 @@
 // Other
 // -----------------------------------------------------------------------------
 @import "block/block";
+@import "bootstrap-custom-extensions/extensions.css";
 @import "content/node.page";
 @import "content/node.article";
 @import "field/_field.empresa-thumb.scss";
+@import "field/_field.pabellon-ficha.scss";
 @import "views/_view.empresas-list.scss";
 @import "views/_view.pabellones-list.scss";

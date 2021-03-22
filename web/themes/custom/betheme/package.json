@@ -21,5 +21,9 @@
     "sass": "1.25.0",
     "sass-loader": "8.0.2",
     "vue-template-compiler": "2.6.11"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "photoviewer": "^3.5.7"
   }
 }

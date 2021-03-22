@@ -1,14 +1,23 @@
 .view-lista-empresas {
     padding: 1.5em 0;
 
-    background-color: #d4edda;
 
+    background-color:#17a2b8;
     display:grid;
     grid-template-columns: repeat( auto-fit, minmax(450px, 1fr) );
 
     & > div {
+
+        &:hover {
+            border-top: 4px solid lightgreen;
+            border-bottom: 4px solid lightgreen;
+            box-shadow: 20px 20px 10px rgba(0,0,0, 0.2);
+            //position: absolute;
+            transform: scale(1.1);
+            transition: all .4s;
+        }
         font-size: 1.2em;
-        box-shadow: 10px 10px 5px grey;
+        box-shadow: 10px 10px 5px rgba(0,0,0, 0.2);
         color: white;
         background-color: rgba(14,12,12,0.43);
         padding: 1.4em;
@@ -17,6 +26,7 @@
         width: 80%;
         margin: 1.2em auto;
         //background-color: lightgray;
+        transition: all .4s;
         .views-field {
             margin: .5em 0;
 
@@ -43,13 +53,8 @@
                         text-decoration: none;
                         padding: .5em;
                         border-radius: 20px;
-                        transition: all .4s;
                         margin-top: 1.5em;
 
-                        &:hover {
-                            background-color: white;
-                            color: orange;
-                        }
                     }
                 }
 

@@ -1,3 +1,10 @@
+@media (max-width: 575px) {
+
+  .text-xs-center {
+    text-align: center;
+    } 
+
+}
 @charset "UTF-8";
 @media print {
   *,
@@ -9582,6 +9589,36 @@ a.text-dark:hover, a.text-dark:focus {
 
 .block.block--subtitle.block--betheme-queesbilboempresas {
   background-color: #d4edda !important;
+  padding-bottom: 2em;
+  background-image: url("../../src/img/back-banner.png");
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+.block.block--subtitle.block--betheme-queesbilboempresas .title {
+  color: yellow;
+  padding-top: 0.7em;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.block.block--subtitle.block--betheme-queesbilboempresas .subtitle {
+  margin-top: 0.6em;
+  font-weight: bold;
+  font-size: 1.7em;
+}
+.block.block--subtitle.block--betheme-queesbilboempresas hr {
+  border: 5px solid yellow;
+  width: 15%;
+  background-color: yellow;
+  color: yellow;
+  margin: 2em auto;
+}
+.block.block--subtitle.block--betheme-queesbilboempresas .description {
+  font-size: 1.3em;
+  text-align: left;
+  width: 45%;
+  font-style: italic;
+  margin: auto;
 }
 .block.block--subtitle.contextual-region {
   background-color: #d4edda !important;
@@ -9602,7 +9639,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #4a4a4a;
 }
 .block .datos-empresa .datos-texto .field__label {
-  color: #383838;
+  color: #383837;
   font-weight: normal;
   margin-bottom: 0.5em;
 }
@@ -9645,15 +9682,51 @@ a.text-dark:hover, a.text-dark:focus {
   height: 100%;
 }
 
+#container-pabellon-ficha {
+  border: 1px solid #2a4e04;
+}
+#container-pabellon-ficha > div:not(:first-of-type, :last-of-type, #ubication-info) {
+  padding: 1em;
+  border-bottom: 1px solid grey;
+}
+#container-pabellon-ficha #ubication-info {
+  padding-top: 1em;
+}
+#container-pabellon-ficha .h1 {
+  font-size: 2.5rem;
+  color: #2a4e04;
+}
+#container-pabellon-ficha .field__label:not(#informacion-de-venta .field__label) {
+  margin-bottom: 1em;
+  color: green;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-right: 1px solid #2d572c;
+  border-left: 1px solid #2d572c;
+  padding: 0 0.5em;
+}
+#container-pabellon-ficha #galeria .field__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+#container-pabellon-ficha #galeria .field__items .field__item {
+  margin-bottom: 0.5em;
+}
+#container-pabellon-ficha .mapa-ubicacion div, #container-pabellon-ficha .mapa-ubicacion iframe {
+  padding: 0;
+  width: 100%;
+}
+
 .view-lista-empresas {
   padding: 1.5em 0;
-  background-color: #d4edda;
+  background-color: #17a2b8;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 .view-lista-empresas > div {
   font-size: 1.2em;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
   color: white;
   background-color: rgba(14, 12, 12, 0.43);
   padding: 1.4em;
@@ -9661,6 +9734,14 @@ a.text-dark:hover, a.text-dark:focus {
   flex-direction: column;
   width: 80%;
   margin: 1.2em auto;
+  transition: all 0.4s;
+}
+.view-lista-empresas > div:hover {
+  border-top: 4px solid lightgreen;
+  border-bottom: 4px solid lightgreen;
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  transition: all 0.4s;
 }
 .view-lista-empresas > div .views-field {
   margin: 0.5em 0;
@@ -9686,12 +9767,7 @@ a.text-dark:hover, a.text-dark:focus {
   text-decoration: none;
   padding: 0.5em;
   border-radius: 20px;
-  transition: all 0.4s;
   margin-top: 1.5em;
-}
-.view-lista-empresas > div .views-field.views-field-field-nombre-comercial .field-content a:hover {
-  background-color: white;
-  color: orange;
 }
 .view-lista-empresas > div .views-field.views-field-field-company-thumbnail {
   margin: auto;
@@ -9720,7 +9796,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .view-lista-pabellones {
-  background-color: blue;
   padding: 1.5em 0;
   background-image: url("../../src/img/background-pattern.jpg");
   border-top: 1px solid grey;
@@ -9737,5 +9812,6 @@ a.text-dark:hover, a.text-dark:focus {
   flex-direction: column;
   width: 80%;
   margin: 1.2em auto;
-  background-color: white;
+  color: white;
+  background-color: rgba(14, 12, 12, 0.63);
 }

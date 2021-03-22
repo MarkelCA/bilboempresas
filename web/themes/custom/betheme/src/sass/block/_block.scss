@@ -1,7 +1,40 @@
 .block {
     &.block--subtitle {
+
         &.block--betheme-queesbilboempresas{
                 background-color: #d4edda !important;
+                //height: 70vh;
+                padding-bottom: 2em;
+                background-image: url('../../src/img/back-banner.png');
+                background-size: cover;
+                text-align: center;
+                color: white;
+                .title {
+                    color: yellow;
+                    padding-top: .7em;
+                    font-size: 4rem;
+                    font-weight: bold;
+                }
+                .subtitle {
+                    margin-top: .6em;
+                    font-weight: bold;
+                    font-size: 1.7em;
+                }
+                hr {
+                    border:5px solid yellow;
+                    width: 15%;
+                    background-color: yellow;
+                    color: yellow;
+                    margin: 2em auto;
+
+                }
+                .description {
+                    font-size: 1.3em;
+                    text-align: left;
+                    width: 45%;
+                    font-style: italic;
+                    margin: auto;
+                }
         }
         &.contextual-region {
                 background-color: #d4edda !important;

@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Template for the main content block.
+ */
+#}
+<div id="container-pabellon-ficha" class='p-4'>
+    <div class="row  mx-2 d-flex align-items-center font-weight-bold">
+        <div class="col-12 h1 text-center text-uppercase p-2">
+            {{content.field_titulo_empresa}}
+        </div>
+    </div>
+    <div class="row mb-2 m-2 pb-4">
+        <div id='foto-portada' class="mb-3 mb-md-0 col-sm-12 col-md-6  ">
+            {{content.field_pabellon_fotos}}
+        </div>
+        <div id="informacion-de-venta" class='col-sm-12 col-md-6 d-flex flex-column justify-content-around h4'>
+            <div class="row text-xs-center text-sm-start ">
+                <div class="col-12 col-sm-6 mb-3 mb-md-0">
+                    {{content.field_venta}}
+                </div>
+                <div class="col-12 col-sm-6">
+                    {{content.field_alquiler}}
+                </div>
+
+            </div>
+            <div class="superficie row">
+                <div class="col-12 mb-3 mb-md-0">
+                    {{content.field_superficie_pabellon}} 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="descripcion" class="row  m-2">
+        {{content.field_descripcion}}
+    </div>
+
+    <div id="galeria" class="row m-2 d-flex">
+        {{ content.field_galeria_pabellon }}
+    </div>
+    <div id='ubication-info' class="row h5 m-2">
+        <div class="col-12">
+            {{content.field_direccion_pabellon}}
+        </div>
+    </div>
+    <div class="row mapa-ubicacion p-2 m-2 ">
+        <div class="col-12 d-flex justify-content-center border  ">
+            {{content.field_pabellon_mapa}}
+        </div>
+    </div>
+</div>
+
+<hr>
+<pre><h2>Content: </h2>{{kpr(content)}}</pre>
