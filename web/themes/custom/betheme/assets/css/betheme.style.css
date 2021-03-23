@@ -9587,6 +9587,30 @@ a.text-dark:hover, a.text-dark:focus {
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 
+.block--views-block--empresas-block-1 h2 {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 1em;
+  border-bottom: 2px dashed lightgreen;
+  padding-bottom: 0.2em;
+  font-weight: bold;
+  background-color: #17a2b8;
+  margin: 0;
+}
+
+.block--views-block--pabellones-block-1 h2 {
+  text-align: center;
+  color: #00354a;
+  text-transform: uppercase;
+  padding-top: 1em;
+  border-bottom: 2px dashed #00354a;
+  padding-bottom: 0.2em;
+  font-weight: bold;
+  background-color: lightgreen;
+  margin: 0;
+}
+
 .block.block--subtitle.block--betheme-queesbilboempresas {
   background-color: #d4edda !important;
   padding-bottom: 2em;
@@ -9596,7 +9620,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: white;
 }
 .block.block--subtitle.block--betheme-queesbilboempresas .title {
-  color: yellow;
+  color: lightgreen;
   padding-top: 0.7em;
   font-size: 4rem;
   font-weight: bold;
@@ -9607,11 +9631,20 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 1.7em;
 }
 .block.block--subtitle.block--betheme-queesbilboempresas hr {
-  border: 5px solid yellow;
+  border: 5px solid lightgreen;
   width: 15%;
-  background-color: yellow;
-  color: yellow;
+  background-color: lightgreen;
+  color: lightgreen;
   margin: 2em auto;
+}
+.block.block--subtitle.block--betheme-queesbilboempresas button {
+  background-color: lightgreen;
+  color: #00354a;
+  text-transform: uppercase;
+  transition: all 0.4s;
+}
+.block.block--subtitle.block--betheme-queesbilboempresas button:hover {
+  transform: scale(1.2);
 }
 .block.block--subtitle.block--betheme-queesbilboempresas .description {
   font-size: 1.3em;
@@ -9656,11 +9689,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: #00773b;
 }
 .block .datos-empresa .empresa-thumb__field-mapa, .block .datos-empresa .mapa {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 .block .datos-empresa .mapa {
+  padding: 0 1.5em;
   margin: 1em 0;
 }
 .block .datos-empresa .empresa-thumb__field-mapa, .block .datos-empresa iframe {
@@ -9797,16 +9829,16 @@ a.text-dark:hover, a.text-dark:focus {
 
 .view-lista-pabellones {
   padding: 1.5em 0;
-  background-image: url("../../src/img/background-pattern.jpg");
+  background-color: lightgreen;
+  background-size: contain;
   border-top: 1px solid grey;
-  margin: 1.5em 0;
   border-bottom: 1px solid grey;
   display: flex;
   flex-direction: column;
 }
 .view-lista-pabellones .views-row {
   border: 1px solid lightgray;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
   padding: 1.4em;
   display: flex;
   flex-direction: column;

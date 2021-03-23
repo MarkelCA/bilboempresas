@@ -16,6 +16,7 @@ function company_owner_theme() {
 }
 function company_owner_node_access(NodeInterface $node, $op) {
     $user_id = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    if(empty($user_id->get_propietario_empresa)) return;
     $user_company_id = $user_id->field_propietario_empresa->getValue()[0]['target_id'];
     $company_id = $node->get('nid')->value;
 

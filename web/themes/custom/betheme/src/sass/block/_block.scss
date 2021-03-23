@@ -1,3 +1,30 @@
+
+.block--views-block--empresas-block-1 {
+    h2 {
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        padding-top: 1em;
+        border-bottom: 2px dashed lightgreen;
+        padding-bottom: .2em;
+        font-weight: bold;
+        background-color: #17a2b8;
+        margin: 0;
+    }
+}
+.block--views-block--pabellones-block-1 {
+    h2 {
+        text-align: center;
+        color: #00354a;
+        text-transform: uppercase;
+        padding-top: 1em;
+        border-bottom: 2px dashed #00354a;
+        padding-bottom: .2em;
+        font-weight: bold;
+        background-color: lightgreen;
+        margin: 0;
+    }
+}
 .block {
     &.block--subtitle {
 
@@ -10,7 +37,7 @@
                 text-align: center;
                 color: white;
                 .title {
-                    color: yellow;
+                    color: lightgreen;
                     padding-top: .7em;
                     font-size: 4rem;
                     font-weight: bold;
@@ -21,13 +48,24 @@
                     font-size: 1.7em;
                 }
                 hr {
-                    border:5px solid yellow;
+                    border:5px solid lightgreen;
                     width: 15%;
-                    background-color: yellow;
-                    color: yellow;
+                    background-color: lightgreen;
+                    color: lightgreen;
                     margin: 2em auto;
 
                 }
+                button{
+                    background-color: lightgreen;
+                    color: #00354a;
+                    text-transform: uppercase;
+                    transition: all .4s;
+
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+
                 .description {
                     font-size: 1.3em;
                     text-align: left;
@@ -36,6 +74,7 @@
                     margin: auto;
                 }
         }
+        
         &.contextual-region {
                 background-color: #d4edda !important;
         }
@@ -82,10 +121,11 @@
         }
 
         .empresa-thumb__field-mapa, .mapa {
-            width: fit-content;
+            width: 100%;
         }
 
         .mapa {
+            padding: 0 1.5em;
             margin: 1em 0;
         }
         .empresa-thumb__field-mapa, iframe{

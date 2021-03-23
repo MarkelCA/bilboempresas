@@ -35,7 +35,7 @@ class ControllerNoticias extends ControllerBase {
     /*
      * En $ruta se indica desde la carpeta public
      */
-    public function import_data($ruta) {
+    public function import_data($ruta = 'csv/noticias_con_fecha.csv') {
         // Numero maximo de articulos creados como prueba 
         $MAXIMO = 15;
         $fila = 1;

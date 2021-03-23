@@ -1,10 +1,11 @@
 .view-lista-pabellones {
     padding: 1.5em 0;
 
-    //background-color: lightgreen;
-    background-image: url('../../src/img/background-pattern.jpg');
+    background-color: lightgreen;
+    //background-image: url('../../src/img/background-pattern.jpg');
+    background-size: contain;
     border-top: 1px solid grey;
-    margin: 1.5em 0;
+    //margin: 1.5em 0;
     border-bottom: 1px solid grey;
 
 
@@ -13,7 +14,7 @@
 
     .views-row {
         border: 1px solid lightgray;
-        box-shadow: 10px 10px 5px grey;
+        box-shadow: 10px 10px 5px rgba(0,0,0, 0.20);
         padding: 1.4em;
         display: flex;
         flex-direction: column;
