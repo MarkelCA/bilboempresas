@@ -8,6 +8,6 @@ function noticias_install() {
 }
 
 function noticias_node_view() {
-    $controller = new ControllerNoticias;
-    $controller->import_data('csv/noticias_con_fecha.csv');
+    //$controller = new ControllerNoticias;
+    //$controller->import_data('csv/noticias_con_fecha.csv');
 }

@@ -37,7 +37,7 @@ class ControllerNoticias extends ControllerBase {
      */
     public function import_data($ruta) {
         // Numero maximo de articulos creados como prueba 
-        $MAXIMO = 3;
+        $MAXIMO = 15;
         $fila = 1;
         $campos = [];
         if (($gestor = fopen("public://$ruta", "r")) !== FALSE) {
