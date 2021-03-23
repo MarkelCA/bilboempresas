@@ -1,0 +1,16 @@
+label: 'Nor da berria'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      title: 'Nor da berria'
+  block_1:
+    display_title: 'Nor da berria'
+    display_options:
+      display_description: 'Erabiltzaile berrien zerrenda'
+      block_description: 'Nor da berria'
+      block_category: Erabiltzailea

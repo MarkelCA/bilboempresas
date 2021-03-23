@@ -1,0 +1,57 @@
+uuid: bf32521b-a6a0-49fb-8171-8287f34b8ceb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pabellon_ficha.body
+    - field.field.node.pabellon_ficha.field_alquiler
+    - field.field.node.pabellon_ficha.field_descripcion
+    - field.field.node.pabellon_ficha.field_direccion_pabellon
+    - field.field.node.pabellon_ficha.field_empresa_productos
+    - field.field.node.pabellon_ficha.field_galeria_pabellon
+    - field.field.node.pabellon_ficha.field_pabellon_como_llegar
+    - field.field.node.pabellon_ficha.field_pabellon_fotos
+    - field.field.node.pabellon_ficha.field_pabellon_mapa
+    - field.field.node.pabellon_ficha.field_superficie_pabellon
+    - field.field.node.pabellon_ficha.field_titulo_empresa
+    - field.field.node.pabellon_ficha.field_venta
+    - node.type.pabellon_ficha
+  module:
+    - image
+    - user
+id: node.pabellon_ficha.teaser
+targetEntityType: node
+bundle: pabellon_ficha
+mode: teaser
+content:
+  field_descripcion:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_pabellon_fotos:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_alquiler: true
+  field_direccion_pabellon: true
+  field_empresa_productos: true
+  field_galeria_pabellon: true
+  field_pabellon_como_llegar: true
+  field_pabellon_mapa: true
+  field_superficie_pabellon: true
+  field_titulo_empresa: true
+  field_venta: true
+  langcode: true
+  links: true

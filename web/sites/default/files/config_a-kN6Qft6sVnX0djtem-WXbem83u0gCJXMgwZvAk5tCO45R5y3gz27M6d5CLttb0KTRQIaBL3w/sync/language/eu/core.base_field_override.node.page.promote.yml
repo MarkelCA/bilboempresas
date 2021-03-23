@@ -1,0 +1,4 @@
+label: 'Atariko orria sustatua'
+settings:
+  on_label: 'On'
+  off_label: 'Off'

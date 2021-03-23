@@ -1,0 +1,27 @@
+label: 'Azaleko orria'
+display:
+  default:
+    display_options:
+      empty:
+        title:
+          title: 'Ongi etorria [site:name] gunera'
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+          tags:
+            previous: '‹ Aurrekoak'
+            next: 'Hurrengoak ›'
+            first: '« Lehenengoa'
+            last: 'Azkena »'
+  feed_1:
+    display_title: Jarioa
+  page_1:
+    display_title: Orria

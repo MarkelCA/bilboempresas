@@ -1,0 +1,11 @@
+--- menu_item_role_access.module
++++ menu_item_role_access.module
+@@ -50,7 +50,7 @@ function menu_item_role_access_entity_base_field_info(EntityTypeInterface $entit
+         'label' => 'hidden',
+       ])
+       ->setDisplayOptions('form', [
+-        'type' => 'checkbox',
++        'type' => 'boolean_checkbox',
+         'weight' => 4,
+         'settings' => [
+           'display_label' => TRUE,

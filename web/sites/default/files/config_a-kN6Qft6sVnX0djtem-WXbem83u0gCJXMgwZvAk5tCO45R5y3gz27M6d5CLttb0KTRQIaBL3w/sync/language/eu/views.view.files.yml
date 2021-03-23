@@ -1,0 +1,78 @@
+label: Fitxategiak
+description: 'Fitxategiak aurkitu eta kudeatu.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Iragazkia
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          tags:
+            previous: '‹ Aurrekoak'
+            next: 'Hurrengoak ›'
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+      fields:
+        fid:
+          label: Fid
+        filename:
+          label: Izena
+          separator: ', '
+        filemime:
+          label: 'MIME mota'
+        filesize:
+          label: Tamaina
+        status:
+          label: Egoera
+          settings:
+            format_custom_false: Behin-behinekia
+            format_custom_true: 'Behin betikoa'
+        created:
+          label: 'Data igo'
+        changed:
+          label: 'Aldatutako data'
+        count:
+          label: Erabilita
+      filters:
+        filename:
+          expose:
+            label: 'Fitxategi izena'
+        filemime:
+          expose:
+            label: 'MIME mota'
+        status:
+          expose:
+            label: Egoera
+      title: Fitxategiak
+      empty:
+        area_text_custom:
+          content: 'Ez dago fitxategirik eskuragarri.'
+  page_1:
+    display_options:
+      menu:
+        title: Fitxategiak
+  page_2:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Aurrekoak'
+            next: 'Hurrengoak ›'
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+      fields:
+        entity_label:
+          label: Entitatea
+        type:
+          label: 'Entitate mota'
+      arguments:
+        fid:
+          exception:
+            title: Guztiak

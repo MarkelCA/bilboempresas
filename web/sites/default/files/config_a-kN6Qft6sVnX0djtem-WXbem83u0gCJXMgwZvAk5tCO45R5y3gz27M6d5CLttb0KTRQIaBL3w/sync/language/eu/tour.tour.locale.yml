@@ -1,0 +1,8 @@
+label: Itzulpena
+tips:
+  locale-search:
+    label: Bilatu
+  locale-filter:
+    label: 'Iragazi bilaketa'
+  locale-translate:
+    label: Itzuli

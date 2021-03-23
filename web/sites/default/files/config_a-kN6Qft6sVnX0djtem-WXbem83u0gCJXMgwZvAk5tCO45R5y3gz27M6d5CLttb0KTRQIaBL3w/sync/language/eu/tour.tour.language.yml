@@ -1,0 +1,10 @@
+label: Hizkuntza
+tips:
+  language-overview:
+    label: Hizkuntzak
+  language-add:
+    label: 'Hizkuntzak gehitzen'
+  language-reorder:
+    label: 'Hizkuntzak birantolatzen'
+  language-default:
+    label: 'Ezarri hizkuntza lehenetsi bezala'

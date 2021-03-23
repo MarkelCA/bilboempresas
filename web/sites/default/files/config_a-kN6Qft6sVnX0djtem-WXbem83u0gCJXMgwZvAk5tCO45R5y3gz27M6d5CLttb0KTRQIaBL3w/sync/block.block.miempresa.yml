@@ -1,0 +1,33 @@
+uuid: b3ed4248-3efa-42e9-ade2-14a79b13855b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mi-empresa
+  module:
+    - system
+    - user
+  theme:
+    - betheme
+id: miempresa
+theme: betheme
+region: navbar_right
+weight: -9
+provider: null
+plugin: 'system_menu_block:mi-empresa'
+settings:
+  id: 'system_menu_block:mi-empresa'
+  label: 'Mi empresa'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

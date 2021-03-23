@@ -1,0 +1,18 @@
+uuid: 75558e3d-b87a-4839-8d2d-a02af8b0f3c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Empresa - Ficha'
+type: empresa_thumb
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

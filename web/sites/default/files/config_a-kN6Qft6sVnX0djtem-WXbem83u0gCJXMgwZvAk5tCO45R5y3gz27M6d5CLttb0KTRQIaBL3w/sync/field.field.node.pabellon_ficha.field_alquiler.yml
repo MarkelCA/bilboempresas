@@ -1,0 +1,19 @@
+uuid: af62da85-4f74-4283-96f1-30ca5d5ee34e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alquiler
+    - node.type.pabellon_ficha
+id: node.pabellon_ficha.field_alquiler
+field_name: field_alquiler
+entity_type: node
+bundle: pabellon_ficha
+label: Alquiler
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

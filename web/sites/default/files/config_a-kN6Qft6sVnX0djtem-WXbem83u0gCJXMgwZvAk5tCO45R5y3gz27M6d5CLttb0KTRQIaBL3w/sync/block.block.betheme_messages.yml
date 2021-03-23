@@ -1,0 +1,22 @@
+uuid: 1f550346-59fa-4862-80b0-4a9a2e6c172a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - betheme
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: betheme_messages
+theme: betheme
+region: navbar_branding
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,26 @@
+label: 'Taxonomia terminoa'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+          tags:
+            previous: ‹‹
+            next: ››
+      arguments:
+        tid:
+          exception:
+            title: Guztiak
+  feed_1:
+    display_title: Jarioa
+  page_1:
+    display_title: Orria

@@ -1,0 +1,30 @@
+uuid: a84e57ae-9b49-42f8-9c7a-5e586fa240bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pabellones
+  module:
+    - system
+    - views
+  theme:
+    - betheme
+id: views_block__pabellones_block_1
+theme: betheme
+region: header
+weight: -2
+provider: null
+plugin: 'views_block:pabellones-block_1'
+settings:
+  id: 'views_block:pabellones-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,22 @@
+uuid: ea8e4cd3-0e20-4418-95bf-705e5226d320
+langcode: en
+status: true
+dependencies:
+  theme:
+    - betheme
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: betheme_local_tasks
+theme: betheme
+region: header
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

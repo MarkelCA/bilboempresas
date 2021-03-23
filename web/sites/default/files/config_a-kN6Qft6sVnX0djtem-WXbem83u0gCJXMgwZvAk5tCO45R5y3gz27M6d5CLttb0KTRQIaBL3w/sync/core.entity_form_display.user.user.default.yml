@@ -1,0 +1,50 @@
+uuid: 6253d01e-f13a-4915-97a1-9851b564ea0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_propietario_empresa
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+    region: content
+  contact:
+    weight: 5
+    region: content
+  field_propietario_empresa:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  language:
+    weight: 0
+    region: content
+  timezone:
+    weight: 6
+    region: content
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: -1
+    region: content
+hidden:
+  langcode: true

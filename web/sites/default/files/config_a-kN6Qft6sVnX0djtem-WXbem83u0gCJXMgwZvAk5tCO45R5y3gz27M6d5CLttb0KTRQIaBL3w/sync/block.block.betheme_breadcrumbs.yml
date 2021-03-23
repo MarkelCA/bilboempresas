@@ -1,0 +1,22 @@
+uuid: 22c427b9-6bcb-4eb3-a0f2-dbc9fc5c5952
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - betheme
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: betheme_breadcrumbs
+theme: betheme
+region: header
+weight: -8
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

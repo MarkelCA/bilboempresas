@@ -1,0 +1,21 @@
+uuid: 17572511-c9e8-484b-90cc-900dcc5fe529
+langcode: eu
+status: true
+dependencies:
+  config:
+    - contact.form.personal
+id: contact_message.personal.default
+targetEntityType: contact_message
+bundle: personal
+mode: default
+content:
+  message:
+    type: string
+    weight: 0
+    label: above
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cea31076ab84233debab3805e66ab091",
+    "content-hash": "daaee50fa4d1df768a0f7cdfa0038f80",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2794,6 +2794,51 @@
             }
         },
         {
+            "name": "drupal/menu_item_role_access",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/menu_item_role_access.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_item_role_access-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "114d6a73c3ab67c08b07aecbeee71452c55eb586"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1586537196",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "patches_applied": []
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "LiamPower",
+                    "homepage": "https://www.drupal.org/user/3016225"
+                }
+            ],
+            "description": "Provide role based access to menu items.",
+            "homepage": "https://www.drupal.org/project/menu_item_role_access",
+            "support": {
+                "source": "https://git.drupalcode.org/project/menu_item_role_access"
+            }
+        },
+        {
             "name": "drupal/module_filter",
             "version": "3.2.0",
             "source": {
@@ -2840,6 +2885,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/module_filter",
                 "issues": "https://www.drupal.org/project/issues/module_filter"
+            }
+        },
+        {
+            "name": "drupal/nodeaccess",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nodeaccess.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nodeaccess-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "ffa629e9ad5685372ee139c9c33a743e4f4807b1"
+            },
+            "require": {
+                "drupal/core": "^8"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1589973321",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ElusiveMind",
+                    "homepage": "https://www.drupal.org/user/350597"
+                },
+                {
+                    "name": "LeDucDuBleuet",
+                    "homepage": "https://www.drupal.org/user/103166"
+                },
+                {
+                    "name": "alisonjo315",
+                    "homepage": "https://www.drupal.org/user/453248"
+                }
+            ],
+            "description": "Provides per node access control.",
+            "homepage": "https://www.drupal.org/project/nodeaccess",
+            "support": {
+                "source": "https://git.drupalcode.org/project/nodeaccess"
             }
         },
         {

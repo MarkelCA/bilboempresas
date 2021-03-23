@@ -1,0 +1,9 @@
+uuid: f4f1bcd1-d6a4-4ac0-80a8-378b856c4b6b
+langcode: en
+status: true
+dependencies: {  }
+id: eu
+label: Basque
+direction: ltr
+weight: 4
+locked: false

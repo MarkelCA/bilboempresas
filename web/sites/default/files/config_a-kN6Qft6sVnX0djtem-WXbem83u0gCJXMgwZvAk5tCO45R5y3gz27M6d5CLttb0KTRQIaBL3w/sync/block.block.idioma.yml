@@ -1,0 +1,25 @@
+uuid: cbf50630-24e9-4fac-8b26-4c0efe493896
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.idioma
+  module:
+    - system
+  theme:
+    - betheme
+id: idioma
+theme: betheme
+region: header
+weight: -1
+provider: null
+plugin: 'system_menu_block:idioma'
+settings:
+  id: 'system_menu_block:idioma'
+  label: Idioma
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

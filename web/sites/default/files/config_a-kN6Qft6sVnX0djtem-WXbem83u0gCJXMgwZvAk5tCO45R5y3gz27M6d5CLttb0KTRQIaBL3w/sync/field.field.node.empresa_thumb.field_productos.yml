@@ -1,0 +1,21 @@
+uuid: 12c458e5-0e09-4385-a7b4-3c80615dffa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_productos
+    - node.type.empresa_thumb
+id: node.empresa_thumb.field_productos
+field_name: field_productos
+entity_type: node
+bundle: empresa_thumb
+label: Productos
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Producto1, Producto2, Producto3'
+default_value_callback: ''
+settings: {  }
+field_type: string

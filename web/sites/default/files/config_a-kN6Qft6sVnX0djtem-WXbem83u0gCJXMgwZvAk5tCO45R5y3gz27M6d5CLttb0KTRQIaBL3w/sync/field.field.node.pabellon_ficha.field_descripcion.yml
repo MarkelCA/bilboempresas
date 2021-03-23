@@ -1,0 +1,19 @@
+uuid: d78a8280-3fa4-4ecb-96a3-83751ca86883
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.pabellon_ficha
+id: node.pabellon_ficha.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: pabellon_ficha
+label: Descripción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

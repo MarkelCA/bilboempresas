@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      filters:
+        access:
+          expose:
+            label: 'Azken atzipena'
+      title: 'Nor dago konektatuta'
+  who_s_online_block:
+    display_title: 'Nor dago konektatuta'
+    display_options:
+      block_description: 'Nor dago konektatuta'

@@ -1,0 +1,31 @@
+uuid: e160f0cc-2bed-4615-8d3d-d2e16c178a4f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:subtitle:830e2ae2-c081-4098-8b4f-739a27523b0a'
+  module:
+    - block_content
+    - system
+  theme:
+    - betheme
+id: betheme_queesbilboempresas
+theme: betheme
+region: header
+weight: -6
+provider: null
+plugin: 'block_content:830e2ae2-c081-4098-8b4f-739a27523b0a'
+settings:
+  id: 'block_content:830e2ae2-c081-4098-8b4f-739a27523b0a'
+  label: '¿Qué es BilboEmpresas?'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,19 @@
+uuid: 3691437b-ac88-43d4-877c-a9b1450095aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo_empresa
+    - node.type.pabellon_ficha
+id: node.pabellon_ficha.field_titulo_empresa
+field_name: field_titulo_empresa
+entity_type: node
+bundle: pabellon_ficha
+label: 'Titulo pabellón'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
