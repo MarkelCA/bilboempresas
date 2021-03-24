@@ -35,10 +35,9 @@ class ControllerNoticias extends ControllerBase {
     /*
      * En $ruta se indica desde la carpeta public
      */
-    public function import_data($ruta = 'csv/noticias_con_fecha.csv') {
+    public function import_noticias($noticiasMaximas = 15, $ruta = 'csv/noticias_con_fecha.csv') {
         // Numero maximo de articulos creados como prueba 
-        $MAXIMO = 15;
-        $fila = 1;
+        $MAXIMO = $noticiasMaximas + 2; // the 2 first rows of the csv are not valid as noticia $fila = 1;
         $campos = [];
         if (($gestor = fopen("public://$ruta", "r")) !== FALSE) {
             while (($datos = fgetcsv($gestor, 1000, ";")) !== FALSE) {
@@ -69,5 +68,16 @@ class ControllerNoticias extends ControllerBase {
 
         return $noticia;
       }
+
+
+    public function drop_news($nodetype = 'noticia') {
+
+      $result = \Drupal::entityQuery('node')
+          ->condition('type', $nodetype)
+          ->execute();
+      entity_delete_multiple('node', $result);
+
+    }
+
 
 }
