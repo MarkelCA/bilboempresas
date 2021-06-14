@@ -1,0 +1,19 @@
+uuid: 547f5eaa-0bc8-420c-924c-ef87d8306cd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nombre_comercial
+    - node.type.empresa_thumb
+id: node.empresa_thumb.field_nombre_comercial
+field_name: field_nombre_comercial
+entity_type: node
+bundle: empresa_thumb
+label: 'Nombre comercial'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

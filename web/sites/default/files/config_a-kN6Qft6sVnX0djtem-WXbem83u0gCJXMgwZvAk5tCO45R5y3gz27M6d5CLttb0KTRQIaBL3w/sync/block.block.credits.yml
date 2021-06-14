@@ -1,0 +1,25 @@
+uuid: 46dd9d89-d35e-4df1-ac5d-350ef84694ac
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:53cb191f-d75e-4ca2-a8a2-cb3e6af8352e'
+  module:
+    - block_content
+  theme:
+    - betheme
+id: credits
+theme: betheme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:53cb191f-d75e-4ca2-a8a2-cb3e6af8352e'
+settings:
+  id: 'block_content:53cb191f-d75e-4ca2-a8a2-cb3e6af8352e'
+  label: Credits
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,94 @@
+label: Iruzkinak
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          tags:
+            previous: '‹ aurrekoa'
+            next: 'hurrengoa ›'
+            first: '« lehenengoa'
+            last: 'azkena »'
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+      fields:
+        comment_bulk_form:
+          action_title: Ekintza
+        subject:
+          label: Gaia
+          separator: ', '
+        uid:
+          separator: ', '
+        name:
+          label: Egilea
+          separator: ', '
+        entity_id:
+          label: 'Noiz bidalia'
+          separator: ', '
+        changed:
+          label: Eguneratuta
+          separator: ', '
+        operations:
+          label: Eragiketak
+        name_1:
+          separator: ', '
+      filters:
+        subject:
+          expose:
+            label: Gaia
+        combine:
+          expose:
+            label: 'Egilearen izena'
+        langcode:
+          expose:
+            label: Hizkuntza
+      title: Iruzkinak
+      empty:
+        area_text_custom:
+          content: 'Ez dago iruzkinik eskuragarri.'
+      use_more_text: gehiago
+  page_published:
+    display_title: 'Argitaratutako iruzkinak'
+    display_options:
+      menu:
+        title: Iruzkinak
+  page_unapproved:
+    display_title: 'Onespenik gabeko iruzkinak'
+    display_options:
+      menu:
+        title: 'Onespenik gabeko iruzkinak'
+      filters:
+        subject:
+          expose:
+            label: Gaia
+        langcode:
+          expose:
+            label: Hizkuntza
+      fields:
+        comment_bulk_form:
+          action_title: Ekintza
+        subject:
+          label: Gaia
+          separator: ', '
+        uid:
+          separator: ', '
+        name:
+          label: Egilea
+          separator: ', '
+        entity_id:
+          label: 'Noiz bidalia'
+          separator: ', '
+        changed:
+          label: Eguneratuta
+          separator: ', '
+        operations:
+          label: Eragiketak
+        name_1:
+          separator: ', '

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Main module file for the vardumper_watchdog module.
+ */
+
+/**
+ * API aliases.
+ */
+function vardumperWatchdog($var, $name = '') {
+  vardumper($var, $name, 'watchdog');
+}
+
+/**
+ * API aliases.
+ */
+function vdpw($var, $name = '') {
+  vardumper($var, $name, 'watchdog');
+}

@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Main module file for the vardumper module.
+ */
+
+/**
+ * API function vardumper().
+ *
+ * @param mixed $var
+ * @param string $name
+ * @param string $type
+ */
+function vardumper($var, $name = '', $type = 'message') {
+  $service = 'vardumper_' . mb_strtolower($type);
+
+  if (\Drupal::hasService($service)) {
+    \Drupal::service($service)->dump($var, $name);
+  }
+  else {
+    \Drupal::service('vardumper_message')->dump($var, $name);
+  }
+}
+
+/**
+ * API aliases.
+ */
+function vdp($var, $name = '', $type = 'message') {
+  vardumper($var, $name, $type);
+}
+
+/**
+ * API aliases.
+ */
+function vardumperMessage($var, $name = '') {
+  vardumper($var, $name, 'message');
+}
+
+/**
+ * API aliases.
+ */
+function vdpm($var, $name = '') {
+  vardumper($var, $name, 'message');
+}
+
+if (!\function_exists('dump')) {
+
+  /**
+   * Dump a variable.
+   */
+  function dump($var, $name) {
+    vardumper($var, $name, 'message');
+  }
+}

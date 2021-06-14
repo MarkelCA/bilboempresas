@@ -1,0 +1,22 @@
+uuid: f4c6c3bd-cc2b-43ba-be22-4ec74b7e5622
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - betheme
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: betheme_content
+theme: betheme
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: visible
+visibility: {  }

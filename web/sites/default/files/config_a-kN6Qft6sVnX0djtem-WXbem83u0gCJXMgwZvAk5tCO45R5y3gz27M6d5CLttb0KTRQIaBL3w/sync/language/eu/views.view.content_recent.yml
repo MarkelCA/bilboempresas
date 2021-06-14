@@ -1,0 +1,19 @@
+label: 'Eduki berria'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      fields:
+        changed:
+          separator: ', '
+      title: 'Eduki berria'
+      empty:
+        area_text_custom:
+          content: 'Ez dago eduki erabilgarririk.'
+      use_more_text: Gehiago
+  block_1:
+    display_title: Blokea

@@ -1,0 +1,4 @@
+register_admin_created:
+  subject: '[site:name] gunean kudeatzaile batek kontu bat sortu du zuretzako'
+status_canceled:
+  body: "[user:display-name],\r\n\r\n\r\nZure [site:name] kontua itxi da.\r\n\r\n--  [site:name] taldea"

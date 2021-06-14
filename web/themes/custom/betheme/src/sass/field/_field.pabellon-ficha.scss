@@ -1,0 +1,43 @@
+#container-pabellon-ficha {
+    border: 1px solid #2a4e04;
+    & > div:not(:first-of-type, :last-of-type, #ubication-info) {
+        //margin-bottom: 7em;
+        padding: 1em;
+        border-bottom: 1px solid grey;
+    }
+
+    #ubication-info {
+        padding-top: 1em;
+    }
+   .h1 {
+       font-size: 2.5rem;
+        color: #2a4e04;
+   } 
+
+    .field__label:not(#informacion-de-venta .field__label) {
+        margin-bottom: 1em;
+        color: green;
+        width: fit-content;
+        border-right: 1px solid #2d572c;
+        border-left: 1px solid #2d572c;
+        padding: 0 .5em;
+    }
+#galeria{
+     .field__items {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+
+        .field__item {
+            margin-bottom: .5em;
+        }
+    }
+    
+}
+    .mapa-ubicacion {
+        //border: 2px solid #007bff;
+        div, iframe {
+            padding:0;
+            width: 100%;
+        }
+    }
+}

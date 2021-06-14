@@ -1,0 +1,66 @@
+label: Edukia
+description: 'Edukiak bilatu eta kudeatu.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Iragazkia
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          tags:
+            previous: '‹ Aurrekoak'
+            next: 'Hurrengoak ›'
+            first: '« Lehenengoa'
+            last: 'Azkena »'
+      fields:
+        title:
+          label: Izenburua
+        type:
+          label: 'Eduki mota'
+          separator: ', '
+        name:
+          label: Egilea
+        status:
+          label: Egoera
+          settings:
+            format_custom_true: Argitaratua
+            format_custom_false: 'Argitaratu gabe'
+        changed:
+          label: Eguneratuta
+        operations:
+          label: Eragiketak
+      filters:
+        title:
+          expose:
+            label: Izenburua
+        type:
+          expose:
+            label: 'Eduki mota'
+        status:
+          expose:
+            label: Egoera
+          group_info:
+            label: 'Argitalpen egoera'
+            group_items:
+              1:
+                title: Argitaratua
+              2:
+                title: 'Argitaratu gabe'
+        langcode:
+          expose:
+            label: Hizkuntza
+      title: Edukia
+      empty:
+        area_text_custom:
+          content: 'Ez dago eduki erabilgarririk.'
+  page_1:
+    display_options:
+      menu:
+        title: Edukia
+      tab_options:
+        title: Edukia
+        description: 'Edukiak aurkitu eta kudeatu'
+    display_title: Orria

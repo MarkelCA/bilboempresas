@@ -1,0 +1,20 @@
+uuid: e0889db9-fb29-445d-839e-f654c78d5927
+langcode: en
+status: false
+dependencies:
+  theme:
+    - betheme
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: betheme_local_actions
+theme: betheme
+region: header
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

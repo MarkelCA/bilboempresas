@@ -1,0 +1,19 @@
+uuid: b60ea0c2-90d8-4d48-99e0-b3ea2b5dd0a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_direccion_no_del_pabellon_
+    - node.type.empresa_thumb
+id: node.empresa_thumb.field_direccion_no_del_pabellon_
+field_name: field_direccion_no_del_pabellon_
+entity_type: node
+bundle: empresa_thumb
+label: "Dirección (Nº del Pabellón, Nº Edificio)\t"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

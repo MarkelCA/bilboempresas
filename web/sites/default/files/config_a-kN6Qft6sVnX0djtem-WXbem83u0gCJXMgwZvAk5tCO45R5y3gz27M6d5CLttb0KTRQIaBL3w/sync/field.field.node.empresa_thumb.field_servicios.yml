@@ -1,0 +1,21 @@
+uuid: 4edb3351-b515-464f-8693-2816c81c19fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servicios
+    - node.type.empresa_thumb
+id: node.empresa_thumb.field_servicios
+field_name: field_servicios
+entity_type: node
+bundle: empresa_thumb
+label: Servicios
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Servicio1, Servicio2, Servicio3'
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,59 @@
+
+{#{% extends '@betheme/node/node.twig' %}#}
+
+  {#{% block content %}#}
+    {#{{ content }}#}
+  {#{% endblock %}#}
+
+<div id="cover-content" class='block'>
+    <div id="cover-description" class='border border-primary p-4'>
+        <h1 id='main-cover-title' class='block text-center text-uppercase font-weight-bold text-primary mb-2'>{{ data.title }}</h1>
+        <a href='/node/{{ data.nid }}/edit' class='btn btn-primary d-block font-weight-bold mb-3'>Editar</a>
+
+    <div id="datos-ficha" class='text-center'>
+        {#I create an array of aproximate values and an empty one to be filled later#}
+        {% set allowed_values = ['nid', 'created', 'changed', 'cnae', 'descripcion', 'nombre', 'mapa', 'productos', 'servicios', 'telefono']  %}
+        {% set allowed_fields = [] %}
+
+        {#I compare the aproximate key with every one of the full named fields of my data array #}
+        {# And if contains it I push it to the allowed_fields array #}
+        {% for key, field in data %}
+            {% for value in allowed_values %}
+                {% if value in key %}
+                    {% set allowed_fields = allowed_fields|merge([key]) %}
+                {%endif%}
+            {% endfor %}
+        {% endfor %}
+
+
+        <table class='table table-dark' >
+            <caption class='bg-dark text-light font-weight-bold' style="caption-side:top;text-align:center">Module custom data</caption>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+        {#Finally I loop over the allowed_fields array and I crete the table #}
+        {%for key, field in data if key in allowed_fields %}
+            <tr>
+                {# Field Name #}
+                <td >{{ key|replace({'_': ' ', 'field_': ''})|capitalize }}</td>
+
+                {# Field Value #}
+                {% if key == 'created' or key=='changed' %}
+                    <td>{{ field|date("d/m/Y, G:i") }}</td>
+                {% else %}
+                    <td>{{ field }}</td>
+                {% endif %}
+            </tr>
+        {%endfor%}
+        </table>
+    </div>
+    </div>
+        <pre>
+        <hr>
+        <h4>Content:</h4>{{ dump(content|keys) }}
+        {#<h4>Context keys:</h4>{{ dump(_context|keys) }}#}
+        <h4>Module data:</h4>{{dump(data|keys)}}
+        </pre>
+
+</div>

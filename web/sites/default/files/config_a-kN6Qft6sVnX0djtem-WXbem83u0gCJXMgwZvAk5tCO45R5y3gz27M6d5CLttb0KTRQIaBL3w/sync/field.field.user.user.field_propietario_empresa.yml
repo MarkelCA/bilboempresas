@@ -1,0 +1,29 @@
+uuid: 373b47eb-b68e-4b3e-9569-0a09d4829e36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_propietario_empresa
+    - node.type.empresa_thumb
+  module:
+    - user
+id: user.user.field_propietario_empresa
+field_name: field_propietario_empresa
+entity_type: user
+bundle: user
+label: 'Propietario de empresa'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      empresa_thumb: empresa_thumb
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

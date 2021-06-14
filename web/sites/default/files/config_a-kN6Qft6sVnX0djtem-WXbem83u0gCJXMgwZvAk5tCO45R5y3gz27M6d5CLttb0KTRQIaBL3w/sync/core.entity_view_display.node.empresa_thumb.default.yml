@@ -1,0 +1,162 @@
+uuid: 5c52236f-9340-4c50-9ee3-b07a97d8660b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.empresa_thumb.body
+    - field.field.node.empresa_thumb.field_codigo_cnae
+    - field.field.node.empresa_thumb.field_como_llegar
+    - field.field.node.empresa_thumb.field_company_thumbnail
+    - field.field.node.empresa_thumb.field_descripcion_de_la_empresa
+    - field.field.node.empresa_thumb.field_direccion_no_del_pabellon_
+    - field.field.node.empresa_thumb.field_fotos
+    - field.field.node.empresa_thumb.field_mapa
+    - field.field.node.empresa_thumb.field_nombre_comercial
+    - field.field.node.empresa_thumb.field_pagina_web
+    - field.field.node.empresa_thumb.field_productos
+    - field.field.node.empresa_thumb.field_servicios
+    - field.field.node.empresa_thumb.field_telefono_de_contacto
+    - node.type.empresa_thumb
+  module:
+    - image
+    - link
+    - simple_gmap
+    - text
+    - user
+id: node.empresa_thumb.default
+targetEntityType: node
+bundle: empresa_thumb
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_codigo_cnae:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_como_llegar:
+    weight: 6
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_company_thumbnail:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_descripcion_de_la_empresa:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_direccion_no_del_pabellon_:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fotos:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_mapa:
+    weight: 14
+    label: hidden
+    settings:
+      include_map: true
+      include_static_map: false
+      include_link: false
+      include_text: false
+      iframe_height: '200'
+      iframe_width: '200'
+      iframe_title: ''
+      static_scale: 1
+      zoom_level: 14
+      link_text: 'View larger map'
+      map_type: m
+      langcode: en
+      apikey: ''
+    third_party_settings: {  }
+    type: simple_gmap
+    region: content
+  field_nombre_comercial:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pagina_web:
+    weight: 8
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_productos:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_servicios:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_telefono_de_contacto:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

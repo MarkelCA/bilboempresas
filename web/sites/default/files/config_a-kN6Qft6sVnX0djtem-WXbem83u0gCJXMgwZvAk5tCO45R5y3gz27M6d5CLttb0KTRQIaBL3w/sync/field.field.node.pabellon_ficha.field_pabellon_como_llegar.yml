@@ -1,0 +1,23 @@
+uuid: b1443fa1-4c24-4d5b-b5ca-3ce2cd891ae8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pabellon_como_llegar
+    - node.type.pabellon_ficha
+  module:
+    - link
+id: node.pabellon_ficha.field_pabellon_como_llegar
+field_name: field_pabellon_como_llegar
+entity_type: node
+bundle: pabellon_ficha
+label: 'Cómo llegar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

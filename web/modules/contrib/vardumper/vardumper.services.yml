@@ -1,0 +1,13 @@
+services:
+  vardumper:
+    class: \Symfony\Component\VarDumper\VarDumper
+
+  vardumper_message:
+    class: \Drupal\vardumper\VarDumper\VarDumperMessage
+    arguments: ['@messenger']
+
+  vardumper_session:
+    class: \Symfony\Component\HttpFoundation\Session\Session
+
+  vardumper_html_drupal_dumper:
+    class: Drupal\vardumper\VarDumper\Dumper\HtmlDrupalDumper

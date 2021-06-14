@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Main module file for the vardumper_block module.
+ */
+
+/**
+ * API aliases.
+ */
+function vardumperBlock($var, $name = '') {
+  vardumper($var, $name, 'block');
+}
+
+function vdpb($var, $name = '') {
+  vardumper($var, $name, 'block');
+}

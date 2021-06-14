@@ -1,0 +1,19 @@
+uuid: 28219377-7ce1-49fb-98f9-cb2c13a76718
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_codigo_cnae
+    - node.type.empresa_thumb
+id: node.empresa_thumb.field_codigo_cnae
+field_name: field_codigo_cnae
+entity_type: node
+bundle: empresa_thumb
+label: 'Código CNAE'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

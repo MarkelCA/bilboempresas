@@ -1,0 +1,25 @@
+uuid: 8ffef1d9-a5d6-4a92-896e-6906f4d3a6fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - betheme
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: betheme_branding
+theme: betheme
+region: navbar_branding
+weight: -4
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

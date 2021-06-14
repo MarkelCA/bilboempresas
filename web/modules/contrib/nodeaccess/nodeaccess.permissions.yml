@@ -1,0 +1,8 @@
+administer nodeaccess:
+  title: Administer Nodeaccess
+  description: Access the Node Access administration pages
+  restrict access: true
+grant node permissions:
+  title: Grant Node Permissions
+  description: Grant Node Permissions
+  restrict access: false

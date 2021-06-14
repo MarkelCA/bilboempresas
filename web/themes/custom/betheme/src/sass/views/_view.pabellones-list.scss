@@ -1,0 +1,38 @@
+.view-lista-pabellones {
+    padding: 1.5em 0;
+
+    background-color: lightgreen;
+    //background-image: url('../../src/img/background-pattern.jpg');
+    background-size: contain;
+    border-top: 1px solid grey;
+    //margin: 1.5em 0;
+    border-bottom: 1px solid grey;
+
+
+    display:flex;
+    flex-direction: column;
+
+    .views-row {
+        border: 1px solid lightgray;
+        box-shadow: 10px 10px 5px rgba(0,0,0, 0.20);
+        padding: 1.4em;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 1.2em auto;
+        //background-color: white;
+        color: white;
+        background-color: rgba(14,12,12,0.63);
+
+        //.views-field-field-pabellon-fotos {
+            //.field-content a{
+                //border: 2px dotted black;
+                //img {
+                    //width: 40%;
+                //}
+            //}
+        //}
+
+
+    } 
+}

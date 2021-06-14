@@ -1,0 +1,46 @@
+description: 'Berriki gertatutako erregistro mezuak'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Iragazkia
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        severity:
+          label: Larritasuna
+        type:
+          label: Mota
+        timestamp:
+          label: Data
+        message:
+          label: Mezua
+        name:
+          label: Erabiltzailea
+          separator: ', '
+        link:
+          label: Eragiketak
+      filters:
+        type:
+          expose:
+            label: Mota
+        severity:
+          expose:
+            label: Larritasuna
+      title: 'Berriki gertatutako erregistro mezuak'
+      empty:
+        area:
+          admin_label: 'Ez dago log mezurik.'
+          content: 'Ez dago log mezurik.'
+  page:
+    display_title: Orria

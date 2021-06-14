@@ -1,0 +1,8 @@
+uuid: e1452a2f-3e93-4a49-8aa9-2d37fde47504
+langcode: en
+status: true
+dependencies: {  }
+id: idioma
+label: Idioma
+description: ''
+locked: false

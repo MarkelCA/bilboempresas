@@ -1,0 +1,25 @@
+{
+  "name": "drupal/vardumper",
+  "type": "drupal-module",
+  "description": "Variable dumper service.",
+  "homepage": "https://www.drupal.org/project/vardumper",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Pol Dellaiera",
+      "email": "pol.dellaiera@protonmail.com"
+    }
+  ],
+  "require": {
+    "php": ">= 5.3.10",
+    "symfony/var-dumper": "^3 || ^4 || ^5"
+  },
+  "require-dev": {
+    "drupol/drupal-conventions": "^1"
+  },
+  "extra": {
+    "grumphp": {
+      "config-default-path": "vendor/drupol/drupal-conventions/config/drupal8/grumphp.yml"
+    }
+  }
+}

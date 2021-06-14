@@ -1,0 +1,19 @@
+uuid: 3ee76395-a826-40ca-af57-9044f9088d16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_de_la_empresa
+    - node.type.empresa_thumb
+id: node.empresa_thumb.field_descripcion_de_la_empresa
+field_name: field_descripcion_de_la_empresa
+entity_type: node
+bundle: empresa_thumb
+label: 'Descripción de la empresa'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,5 @@
+services:
+  nodeaccess.access_checker:
+      class: Drupal\nodeaccess\AccessChecks\NodeGrantAccessCheck
+      tags:
+        - { name: access_check }

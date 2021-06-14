@@ -1,0 +1,71 @@
+label: Erabiltzaileak
+description: 'Bilatu eta kudeatu zure webgunearekin elkarreginean ari den jendea.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Iragazkia
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          tags:
+            previous: '‹ Aurrekoak'
+            next: 'Hurrengoak ›'
+            first: '« Lehenengoa'
+            last: 'Azkena »'
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+      fields:
+        name:
+          label: 'Erabiltzaile izena'
+        status:
+          label: Egoera
+          settings:
+            format_custom_true: Aktiboa
+            format_custom_false: Blokeatuta
+        roles_target_id:
+          label: Zereginak
+        created:
+          label: 'Kidea noiztik'
+        access:
+          label: 'Azken atzipena'
+        operations:
+          label: Eragiketak
+        mail:
+          separator: ', '
+      filters:
+        combine:
+          expose:
+            label: 'Izena edo posta elektronikoa'
+        status:
+          group_info:
+            label: Egoera
+            group_items:
+              1:
+                title: Aktiboa
+              2:
+                title: Blokeatuta
+        roles_target_id:
+          expose:
+            label: Rol
+        permission:
+          expose:
+            label: Baimena
+      title: Erabiltzaileak
+      empty:
+        area_text_custom:
+          content: 'Erabiltzaileek ez dute eskuragarri.'
+      use_more_text: gehiago
+  page_1:
+    display_title: Orria
+    display_options:
+      menu:
+        title: Zerrenda
+        description: 'Bilatu eta kudeatu zure webgunearekin elkarreginean ari den jendea.'
+      tab_options:
+        title: Erabiltzaileak
+        description: 'Erabiltzailearen kontuak, rolak eta baimenak kudeatu'

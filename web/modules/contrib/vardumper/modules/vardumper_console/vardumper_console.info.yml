@@ -1,0 +1,11 @@
+type: module
+name: Vardumper Console Integration
+description: Allows Vardumper to dump variable debug in a console.
+core: 8.x
+php: 5.3.10
+package: Development
+
+# Information added by Drupal.org packaging script on 2020-06-29
+version: '8.x-1.5'
+project: 'vardumper'
+datestamp: 1593424135

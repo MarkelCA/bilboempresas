@@ -1,0 +1,10 @@
+label: 'Hizkuntzak editatzen'
+tips:
+  language-edit-overview:
+    label: 'Hizkuntzak editatzen'
+  language-edit-langcode:
+    label: 'Hizkuntza kodea'
+  language-edit-label:
+    label: 'Hizkuntza izena'
+  language-edit-direction:
+    label: 'Hizkuntza norabidea'

@@ -1,0 +1,9 @@
+<?php
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\noticias\Controller\ControllerNoticias;
+
+// This is a hook to do all the developing testings and debugging
+function noticias_node_view() {
+    //$controller = new ControllerNoticias;
+    //$value = $controller->drop_news();
+}

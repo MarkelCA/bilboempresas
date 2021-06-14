@@ -1,0 +1,6 @@
+name: CompanyOwner 
+description: Identifies when a user is owner of one company and grants permissions form him to edit its data.
+package: Custom
+
+core_version_requirement: ^8 
+type: module 

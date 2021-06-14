@@ -1,0 +1,3 @@
+services:
+  vardumper_console:
+    class: \Drupal\vardumper_console\VarDumper\VarDumperConsole

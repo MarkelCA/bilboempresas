@@ -1,0 +1,35 @@
+<?php
+use \Drupal\Core\Access\AccessResult;
+use \Drupal\node\NodeInterface;
+
+function company_owner_theme() {
+    return array(
+        'owner_editing_theme' => array(
+          'variables' => array(
+              'data' => array(
+                  'data1' => 'default'
+              )
+          ),
+          'template' => 'newtemplate'
+     )
+     );
+}
+function company_owner_node_access(NodeInterface $node, $op) {
+    $user_id = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    if(empty($user_id->get_propietario_empresa)) return;
+    $user_company_id = $user_id->field_propietario_empresa->getValue()[0]['target_id'];
+    $company_id = $node->get('nid')->value;
+
+    if($op === 'update') {
+            return AccessResult::allowedIf( $company_id === $user_company_id );
+    }
+    
+      return AccessResult::neutral();
+}
+//function hook_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition) {
+  //if ($field_definition
+    //->getName() == 'field_propietario_de_empresadru' && $operation == 'edit') {
+    //return AccessResult::allowedIfHasPermission($account, 'update field of interest');
+  //}
+  //return AccessResult::neutral();
+//}

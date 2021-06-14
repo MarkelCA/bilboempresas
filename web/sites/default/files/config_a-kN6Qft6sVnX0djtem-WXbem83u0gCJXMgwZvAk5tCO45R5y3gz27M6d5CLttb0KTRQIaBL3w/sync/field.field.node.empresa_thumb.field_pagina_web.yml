@@ -1,0 +1,23 @@
+uuid: ad067453-3a64-46c3-ba69-6bb209bc25aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pagina_web
+    - node.type.empresa_thumb
+  module:
+    - link
+id: node.empresa_thumb.field_pagina_web
+field_name: field_pagina_web
+entity_type: node
+bundle: empresa_thumb
+label: 'Página web'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,195 @@
+uuid: 715d55b2-eac9-48e7-982e-2e9713cf28f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.empresa_thumb.body
+    - field.field.node.empresa_thumb.field_codigo_cnae
+    - field.field.node.empresa_thumb.field_como_llegar
+    - field.field.node.empresa_thumb.field_company_thumbnail
+    - field.field.node.empresa_thumb.field_descripcion_de_la_empresa
+    - field.field.node.empresa_thumb.field_direccion_no_del_pabellon_
+    - field.field.node.empresa_thumb.field_fotos
+    - field.field.node.empresa_thumb.field_mapa
+    - field.field.node.empresa_thumb.field_nombre_comercial
+    - field.field.node.empresa_thumb.field_pagina_web
+    - field.field.node.empresa_thumb.field_productos
+    - field.field.node.empresa_thumb.field_servicios
+    - field.field.node.empresa_thumb.field_telefono_de_contacto
+    - image.style.thumbnail
+    - node.type.empresa_thumb
+  module:
+    - image
+    - link
+    - path
+    - text
+id: node.empresa_thumb.default
+targetEntityType: node
+bundle: empresa_thumb
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_codigo_cnae:
+    weight: 133
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_como_llegar:
+    weight: 125
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_company_thumbnail:
+    weight: 122
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_descripcion_de_la_empresa:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_direccion_no_del_pabellon_:
+    weight: 130
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_fotos:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_mapa:
+    weight: 135
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_nombre_comercial:
+    weight: 134
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pagina_web:
+    weight: 126
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_productos:
+    weight: 136
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_servicios:
+    weight: 137
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telefono_de_contacto:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

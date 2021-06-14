@@ -1,0 +1,16 @@
+role_alias:
+  anonymous:
+    alias: 'Anonymous user'
+    name: 'Anonymous user'
+    weight: 0
+    allow: 0
+  authenticated:
+    alias: 'Authenticated user'
+    name: 'Authenticated user'
+    weight: 0
+    allow: 0
+  administrator:
+    alias: Administrator
+    name: Administrator
+    weight: 0
+    allow: 0

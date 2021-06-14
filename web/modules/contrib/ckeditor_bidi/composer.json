@@ -1,0 +1,27 @@
+{
+  "name": "drupal/ckeditor_bidi",
+  "description": "Adds RTL/LTR buttons to Drupal 8/9 CKEditor toolbar by integrating CKEditor BiDi (Text Direction) plugin.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/ckeditor_bidi",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Israel Shmueli",
+      "homepage": "https://www.drupal.org/u/israelshmueli"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/ckeditor_bidi",
+    "source": "http://cgit.drupalcode.org/ckeditor_bidi"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "drupal/core": "^8 || ^9"
+  }
+}

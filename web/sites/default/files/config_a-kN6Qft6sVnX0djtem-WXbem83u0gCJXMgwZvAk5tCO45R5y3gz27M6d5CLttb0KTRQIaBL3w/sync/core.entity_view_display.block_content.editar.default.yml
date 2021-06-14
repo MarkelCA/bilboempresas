@@ -1,0 +1,23 @@
+uuid: f9bd855a-03a5-4ecc-8d20-9ab65b7ec71f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.editar
+    - field.field.block_content.editar.body
+  module:
+    - text
+id: block_content.editar.default
+targetEntityType: block_content
+bundle: editar
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

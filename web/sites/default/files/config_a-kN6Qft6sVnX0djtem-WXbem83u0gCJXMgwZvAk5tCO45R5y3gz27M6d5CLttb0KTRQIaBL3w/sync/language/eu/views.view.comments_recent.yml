@@ -1,0 +1,12 @@
+label: 'Azken iruzkinak'
+display:
+  default:
+    display_options:
+      title: 'Azken iruzkinak'
+      empty:
+        area_text_custom:
+          content: 'Ez dago iruzkinik eskuragarri.'
+  block_1:
+    display_title: Blokea
+    display_options:
+      block_description: 'Azken iruzkinak'

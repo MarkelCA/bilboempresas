@@ -1,0 +1,37 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Ezarri
+          reset_button_label: Garbitu
+          sort_asc_label: Goraka
+      pager:
+        options:
+          tags:
+            previous: '‹ Aurrekoak'
+            next: 'Hurrengoak ›'
+          expose:
+            items_per_page_label: 'Elementuak orriak'
+            items_per_page_options_all_label: '- Dena -'
+            offset_label: Desplazamendua
+      fields:
+        info:
+          label: 'Blokearen azalpena'
+          separator: ', '
+        type:
+          label: 'Bloke mota'
+          separator: ', '
+        changed:
+          label: Eguneratuta
+        operations:
+          label: Eragiketak
+      filters:
+        info:
+          expose:
+            label: 'Blokearen azalpena'
+        type:
+          expose:
+            label: 'Bloke mota'
+  page_1:
+    display_title: Orria

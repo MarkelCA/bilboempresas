@@ -1,0 +1,19 @@
+uuid: 3af286f6-173b-4d6b-bd05-5263aa5534e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_como_llegar
+field_name: field_como_llegar
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

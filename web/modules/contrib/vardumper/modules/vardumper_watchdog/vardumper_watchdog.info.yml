@@ -1,0 +1,14 @@
+type: module
+name: Vardumper Watchdog Integration
+description: Allows Vardumper to dump variable debug in the Drupal's watchdog.
+core: 8.x
+php: 5.3.10
+package: Development
+
+dependencies:
+  - drupal:dblog
+
+# Information added by Drupal.org packaging script on 2020-06-29
+version: '8.x-1.5'
+project: 'vardumper'
+datestamp: 1593424135
